@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Goal.belongsTo( models.User, { foreignKey: 'userId', onDelete: 'CASCADE', onUpdate: 'CASCADE'})
+      Goal.belongsTo(models.User, { foreignKey: 'userId', onDelete: 'CASCADE', onUpdate: 'CASCADE' })
     }
   }
   Goal.init({
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    activity:{
+    activity: {
       type: DataTypes.STRING,
       allowNull: false
     },

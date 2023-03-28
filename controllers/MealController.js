@@ -22,6 +22,7 @@ const getMeal = async (req, res) => {
 
 const createMeal = async (req, res) => {
     try {
+        
         let mealBody = {
             ...req.body
         }
