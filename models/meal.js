@@ -14,9 +14,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Meal.init({
-    name: DataTypes.STRING,
-    ingredientId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    ingredientId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'ingredients',
+        key: 'id'
+      }
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Meal',

@@ -14,13 +14,36 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Goal.init({
-    age: DataTypes.INTEGER,
-    weight: DataTypes.STRING,
-    height: DataTypes.STRING,
-    activity: DataTypes.STRING,
-    description: DataTypes.STRING,
-    calories: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    weight: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    height: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    activity:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    calories: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
   }, {
     sequelize,
     modelName: 'Goal',

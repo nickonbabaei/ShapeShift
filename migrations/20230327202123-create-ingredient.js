@@ -10,19 +10,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       servingSize: {
         type: Sequelize.STRING
       },
       calories: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       protein: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       carbs: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       fat: {
         type: Sequelize.STRING
