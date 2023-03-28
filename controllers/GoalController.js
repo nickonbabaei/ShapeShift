@@ -1,5 +1,4 @@
 const { Goal, User } = require('../models')
-const user = require('../models/user')
 
 const createGoal = async (req, res) => {
     try {
