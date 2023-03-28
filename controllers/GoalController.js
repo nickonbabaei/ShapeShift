@@ -8,7 +8,7 @@ const createGoal = async (req, res) => {
             ...req.body
         }
         let goal = await Goal.create(goalBody)
-        res.send(post)
+        res.send(goal)
     } catch (error) {
         throw error
     }

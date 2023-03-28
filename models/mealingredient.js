@@ -16,6 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   MealIngredient.init({
     userId: {
       type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
       references: {
         model: 'users',
         key: 'id'
@@ -23,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     mealId: {
       type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
       references: {
         model: 'meals',
         key: 'id'
@@ -30,6 +34,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     ingredientId: {
       type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
       references: {
         model: 'ingredients',
         key: 'id'
