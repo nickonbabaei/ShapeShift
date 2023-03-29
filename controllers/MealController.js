@@ -1,4 +1,4 @@
-const { Meal } = require('../models')
+const { Meal, MealIngredient } = require('../models')
 
 
 const getAllMeals = async (req, res) => {
@@ -13,7 +13,9 @@ const getAllMeals = async (req, res) => {
 const getMeal = async (req, res) => {
     try {
         const id = req.params.meal_id
-        const meal = await Meal.findByPk(id)
+        const meal = await Meal.findByPk(id, {
+            include: { model: Ingredient }
+        })
         res.send(meal)
     } catch (error) {
         throw error
@@ -22,7 +24,6 @@ const getMeal = async (req, res) => {
 
 const createMeal = async (req, res) => {
     try {
-        
         let mealBody = {
             ...req.body
         }
@@ -37,11 +38,11 @@ const deleteMeal = async (req, res) => {
     try {
         const id = req.params.meal_id
         await Meal.destroy(id)
-        res.send({'message': `Meal with ID:${id} was deleted`})
+        res.send({ 'message': `Meal with ID:${id} was deleted` })
     } catch (error) {
         throw error
     }
-    
+
 }
 
 const updateMeal = async (req, res) => {
@@ -57,11 +58,25 @@ const updateMeal = async (req, res) => {
     }
 }
 
+const assignIngredient = async (req, res) => {
+    try {
+        const { mealId, ingredientId, userId } = req.body;
+        const mealIngredient = await MealIngredient.create({
+            userId: parseInt(userId),
+            mealId: parseInt(mealId),
+            ingredientId: parseInt(ingredientId),
+        });
+        res.send(mealIngredient);
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     getAllMeals,
     getMeal,
     createMeal,
     deleteMeal,
-    updateMeal
-
+    updateMeal,
+    assignIngredient
 }
