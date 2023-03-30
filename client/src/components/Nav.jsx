@@ -8,7 +8,7 @@ const Nav = () => {
             <div
                 className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8"
             >
-                <a className="block text-teal-600" href="/">
+                <NavLink className="block text-teal-600" to={"/"}>
                     <span className="sr-only">Home</span>
                     <svg
                         className="h-8"
@@ -21,7 +21,7 @@ const Nav = () => {
                             fill="currentColor"
                         />
                     </svg>
-                </a>
+                </NavLink>
 
                 <div className="flex flex-1 items-center justify-end md:justify-between">
                     <nav aria-label="Site Nav" className="hidden md:block">
