@@ -57,18 +57,6 @@ const updateIngredient = async (req, res) => {
     }
 }
 
-// const searchFoodDatabase = async (req, res) => {
-//     try {
-
-//         const response = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${searched}&dataType=&sortBy=dataType.keyword&api_key=${process.env.USDA_API_KEY}`)
-//         res.send(response)
-
-//     } catch (error) {
-//         throw error
-//     }
-// }
-
-
 
 
 
@@ -78,6 +66,5 @@ module.exports = {
     deleteIngredient,
     createIngredient,
     updateIngredient,
-    getFoodDatabase
 
 }

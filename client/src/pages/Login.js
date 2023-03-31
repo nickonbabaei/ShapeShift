@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 
 const Login = ({ setUser }) => {
@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
             password: ''
         })
         setUser(payload)
-        navigate('/')
+        navigate('/setgoal')
     }
 
     return (
@@ -130,7 +130,7 @@ const Login = ({ setUser }) => {
 
                     <p className="text-center text-sm text-gray-500">
                         No account?
-                        <a className="underline" href="">Sign up</a>
+                        <NavLink className="underline" to={'/register'}>Sign up</NavLink>
                     </p>
                 </form>
             </div>

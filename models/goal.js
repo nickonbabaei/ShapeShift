@@ -46,6 +46,9 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
+    sex: {
+      type: DataTypes.STRING
+    }
   }, {
     sequelize,
     modelName: 'Goal',
