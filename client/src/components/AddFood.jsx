@@ -1,9 +1,33 @@
 import React from 'react'
 
 const AddFood = () => {
-  return (
-    <div>AddFood</div>
-  )
+    const [searched, setSearched] = useState(null)
+    const [searchResults, setSearchResults] = useState(null)
+
+    // REMINDER: MAKE THROUGH TABLE JUST BETWEEN USERID AND INGREDIENTS, SO A USER JUST GETS ASSIGNED INGREDIENTS BASED ON WHAT THEY ADD TO DASHBOARD,
+    // NO NEED FOR MEAL. 
+
+    const getSearchResults = async () => {
+
+        const food = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=%22${searched}%22&dataType=&pageSize=100&sortBy=dataType.keyword&api_key=${process.env.REACT_APP_USDA_API_KEY}`)
+        setSearchResults(food.data)
+        console.log(searchResults.data)
+        setSearched('')
+    }
+
+    const handleChange = (event) => {
+        setSearched(event.target.value)
+    
+      }
+
+    useEffect(() => {
+        getSearchResults()
+    }, [])
+
+
+    return (
+        <div>AddFood</div>
+    )
 }
 
 export default AddFood
