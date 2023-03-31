@@ -9,41 +9,41 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
 function App() {
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
 
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
-  const handleLogOut = () => {
-    setUser(null)
-    localStorage.clear()
-    navigate('/')
-  }
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-  }
+  // const handleLogOut = () => {
+  //   setUser(null)
+  //   localStorage.clear()
+  //   navigate('/')
+  // }
+  // const checkToken = async () => {
+  //   const user = await CheckSession()
+  //   setUser(user)
+  // }
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      checkToken()
-    }
-  }, [])
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token')
+  //   if (token) {
+  //     checkToken()
+  //   }
+  // }, [])
 
 
 
   return (
     <div>
     <Nav
-      user={user}
-      handleLogOut={handleLogOut}
+      // user={user}
+      // handleLogOut={handleLogOut}
     />
     <div className="App">
       <main className=''>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} /> 
-          <Route path='/login' element={<Login setUser={setUser}/>} />
+          <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
       </main>

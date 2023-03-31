@@ -1,4 +1,6 @@
 const { Ingredient } = require('../models')
+const axios = require('axios')
+require('dotenv').config()
 
 const getAllIngredients = async (req, res) => {
     try {
@@ -35,11 +37,11 @@ const deleteIngredient = async (req, res) => {
     try {
         const id = req.params.ingredient_id
         await Ingredient.destroy(id)
-        res.send({'message': `Ingredient with ID:${id} was deleted`})
+        res.send({ 'message': `Ingredient with ID:${id} was deleted` })
     } catch (error) {
         throw error
     }
-    
+
 }
 
 const updateIngredient = async (req, res) => {
@@ -55,6 +57,18 @@ const updateIngredient = async (req, res) => {
     }
 }
 
+// const searchFoodDatabase = async (req, res) => {
+//     try {
+
+//         const response = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${searched}&dataType=&sortBy=dataType.keyword&api_key=${process.env.USDA_API_KEY}`)
+//         res.send(response)
+
+//     } catch (error) {
+//         throw error
+//     }
+// }
+
+
 
 
 
@@ -63,6 +77,7 @@ module.exports = {
     getIngredient,
     deleteIngredient,
     createIngredient,
-    updateIngredient
+    updateIngredient,
+    getFoodDatabase
 
 }
