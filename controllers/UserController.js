@@ -4,7 +4,7 @@ const getUser = async (req, res) => {
     try {
         let userId = req.params.user_id
         const user = await User.findByPk(userId, {
-            include: [{ model: Goal }, { model: Meal }]
+            include: [{ model: Goal }]
         })
         res.send(user)
     } catch (error) {

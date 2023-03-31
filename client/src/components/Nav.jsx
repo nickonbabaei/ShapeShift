@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = ({handleLogout}) => {
 
     return (
         <header aria-label="Site Header" className="bg-slate-200">
@@ -33,9 +33,9 @@ const Nav = () => {
                             </li>
 
                             <li>
-                                <a className="text-gray-500 transition hover:text-gray-500/75" href="/">
-                                    blah blah
-                                </a>
+                                <NavLink className="text-gray-500 transition hover:text-gray-500/75" to='goalpage'>
+                                    My Goal
+                                </NavLink>
                             </li>
 
                             <li>
@@ -52,16 +52,10 @@ const Nav = () => {
                         <div className="sm:flex sm:gap-4">
                             <NavLink
                                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                                to={"/login"}
+                                onClick={handleLogout}
+                                to={"/"}
                             >
-                                Login
-                            </NavLink>
-
-                            <NavLink
-                                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                                to={'/register'}
-                            >
-                                Register
+                                Sign Out
                             </NavLink>
                         </div>
 

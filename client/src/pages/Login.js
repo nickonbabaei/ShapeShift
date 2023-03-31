@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
             password: ''
         })
         setUser(payload)
-        navigate('/setgoal')
+        navigate('/')
     }
 
     return (

@@ -1,11 +1,15 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import Nav from '../components/Nav'
 
-const Home = () => {
+const Home = ({handleLogout}) => {
 
   return (
-    <div>Home
+    <div>
+      <header>
+      <Nav handleLogout={handleLogout}/>
+      </header>
 
 
     </div>

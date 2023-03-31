@@ -64,6 +64,7 @@ const SetGoal = ({ user }) => {
                     type="text"
                     id="sex"
                     onChange={handleChange}
+                    required
                   >
                     <option disabled selected>Sex</option>
                     <option value='male'>Male</option>
@@ -78,6 +79,7 @@ const SetGoal = ({ user }) => {
                     type="text"
                     id="age"
                     onChange={handleChange}
+                    required
                   />
                 </div>
 
@@ -89,6 +91,7 @@ const SetGoal = ({ user }) => {
                     type="text"
                     id="weight"
                     onChange={handleChange}
+                    required
                   />
                 </div>
 
@@ -100,6 +103,7 @@ const SetGoal = ({ user }) => {
                     type="text"
                     id="height"
                     onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -110,7 +114,8 @@ const SetGoal = ({ user }) => {
                   placeholder="Activity Level"
                   type="text"
                   id="activity"
-                  onChange={handleChange}>
+                  onChange={handleChange}
+                  required>
                   <option disabled selected>
                     Activity Level
                   </option>
@@ -142,6 +147,7 @@ const SetGoal = ({ user }) => {
                     type="email"
                     id="description"
                     onChange={handleChange}
+                    required
                   >
                     <option disabled selected>Goal</option>
                     <option value='600'>Dirty Bulk (gain weight/muscle with no regards to fat gain)</option>

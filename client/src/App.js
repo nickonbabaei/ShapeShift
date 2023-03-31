@@ -5,9 +5,11 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register';
 import SetGoal from './pages/SetGoal';
+import GoalPage from './pages/GoalPage';
 import { CheckSession } from './services/Auth';
 import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom'
+
 
 function App() {
   const [user, setUser] = useState(null)
@@ -36,13 +38,22 @@ function App() {
   return (
     <div className="App">
       <main className=''>
-        <Routes>
-          <Route path='/' element={<Login setUser={setUser}/>} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/about' element={<About />} /> 
-          <Route path='/home' element={<Home />} />
-          <Route path='/setgoal' element={<SetGoal user={user}/>} />
-        </Routes>
+
+        {user ?
+          <Routes>
+            <Route path='/' element={<Home handleLogout={handleLogOut}/>} />
+            <Route path='/login' element={<Login setUser={setUser} />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/setgoal' element={<SetGoal user={user} />} />
+            <Route path='/goalpage' element={<GoalPage user={user} />} />
+          </Routes>
+          :
+          <Routes>
+            <Route path='/' element={<Login setUser={setUser} />} />
+          </Routes>
+}
       </main>
     </div>
   );

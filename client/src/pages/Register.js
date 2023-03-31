@@ -28,7 +28,7 @@ const Register = () => {
                 username: '',
                 password: ''
             })
-            navigate('/login')
+            navigate('/setgoal')
         } else {
             return
         }
