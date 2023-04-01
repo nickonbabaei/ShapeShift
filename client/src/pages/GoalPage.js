@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import Nav from '../components/Nav'
 
-const GoalPage = ({ user }) => {
+const GoalPage = ({ user, handleLogout}) => {
     const [goalInfo, setGoalInfo] = useState(null)
 
     const getGoalInfo = async () => {
@@ -21,6 +22,7 @@ const GoalPage = ({ user }) => {
 
     return goalInfo && (
         <section class="bg-gray-900 text-white">
+            <Nav handleLogout={handleLogout}/>
             <div
                 class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
             >

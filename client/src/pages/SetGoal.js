@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Nav from '../components/Nav'
 
-const SetGoal = ({ user }) => {
+const SetGoal = ({ user, handleLogout }) => {
   const initalState = {
     age: '',
     weight: '',
@@ -150,11 +151,11 @@ const SetGoal = ({ user }) => {
                     required
                   >
                     <option disabled selected>Goal</option>
-                    <option value='600'>Dirty Bulk (gain weight/muscle with no regards to fat gain)</option>
-                    <option value='300'>Lean Bulk (gain weight/muscle while putting on minimal fat)</option>
-                    <option value='0'>Maintain Weight</option>
-                    <option value='-300'> Cut Weight (lose weight while losing minimum muscle)</option>
-                    <option value='-600'> Lose Weight (lose weight with no regards to muscle loss) </option>
+                    <option value='600'>Dirty bulk (gain weight/muscle with no regards to fat gain)</option>
+                    <option value='300'>Lean bulk (gain weight/muscle while putting on minimal fat)</option>
+                    <option value='0'>Maintain your current weight</option>
+                    <option value='-300'> Cut weight (lose weight while losing minimum muscle)</option>
+                    <option value='-600'> Lose weight (lose weight with no regards to muscle loss) </option>
                     <option></option>
 
                   </select>

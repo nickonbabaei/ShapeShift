@@ -38,20 +38,23 @@ function App() {
   return (
     <div className="App">
       <main className=''>
-
-        {user ?
+        {user?.id ?
           <Routes>
             <Route path='/' element={<Home handleLogout={handleLogOut}/>} />
             <Route path='/login' element={<Login setUser={setUser} />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/setgoal' element={<SetGoal user={user} />} />
-            <Route path='/goalpage' element={<GoalPage user={user} />} />
+            <Route path='/about' element={<About handleLogout={handleLogOut}/>} />
+            <Route path='/setgoal' element={<SetGoal user={user} handleLogout={handleLogOut} />} />
+            <Route path='/goalpage' element={<GoalPage user={user} handleLogout={handleLogOut}/>} />
           </Routes>
           :
           <Routes>
             <Route path='/' element={<Login setUser={setUser} />} />
+            <Route path='/home' element={<Home handleLogout={handleLogOut}/>} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/setgoal' element={<SetGoal user={user} />} />
+            <Route path='/goalpage' element={<GoalPage user={user} />} />
           </Routes>
 }
       </main>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 const Register = () => {
     let navigate = useNavigate()
@@ -79,49 +79,97 @@ const Register = () => {
                             dolorum aliquam, quibusdam aperiam voluptatum.
                         </p>
 
-                        <form onSubmit={handleSubmit} class="mt-8 grid grid-cols-6 gap-6">
+                        <form onSubmit={handleSubmit} class="mt-8 grid grid-rows-5 grid-cols-6 gap-6">
                             <div class="col-span-6">
-                            <input
-                                name='username'
-                                type="username"
-                                className=" w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                placeholder="Full name"
-                                onChange={handleChange}
-                                value={formValues.username}
-                            />
+                                <label
+                                    for="email"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                >
+                                    <input
+                                        type="name"
+                                        name="username"
+                                        placeholder="Full name"
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.username}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Full name
+                                    </span>
+                                </label>
                             </div>
 
                             <div class="col-span-6">
-                            <input
-                                name='email'
-                                type="email"
-                                className=" w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                placeholder="Email"
-                                onChange={handleChange}
-                                value={formValues.email}
-                            />
+                                <label
+                                    for="email"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                >
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Email
+                                    </span>
+                                </label>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                            <input
-                                name='password'
-                                type="password"
-                                className=" w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                placeholder="Password"
-                                onChange={handleChange}
-                                value={formValues.password}
-                            />
+                                <label
+                                    for="password"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                >
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.password}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Password
+                                    </span>
+                                </label>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                            <input
-                                name='confirmPassword'
-                                type="password"
-                                className=" w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                placeholder="Confirm password"
-                                onChange={handleChange}
-                                value={formValues.confirmPassword}
-                            />
+                                <label
+                                    for="confirmPassword"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                >
+                                    <input
+                                        type="password"
+                                        name="confirmPassword"
+                                        placeholder='Confirm password'
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.confirmPassword}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Confirm password
+                                    </span>
+                                </label>
                             </div>
 
                             {/* <div class="col-span-6">
@@ -157,11 +205,12 @@ const Register = () => {
                                 >
                                     Create an account
                                 </button>
-
-                                {/* <p class="mt-4 text-sm text-gray-500 sm:mt-0">
+                            </div>
+                            <div class="col-span-6 justify-center sm:flex sm:items-center sm:gap-4">
+                                <span class="mt-4 text-sm text-gray-500 sm:mt-0">
                                     Already have an account?
-                                    <a href="#" class="text-gray-700 underline">Log in</a>.
-                                </p> */}
+                                    <NavLink to='{/}' class="text-gray-700 underline"> Log in</NavLink>.
+                                </span>
                             </div>
                         </form>
                     </div>

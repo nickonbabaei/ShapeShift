@@ -46,79 +46,50 @@ const Login = ({ setUser }) => {
                     <p className="text-center text-lg font-medium">Sign in to your account</p>
 
                     <div>
-                        <label htmlFor="email" className="sr-only">Email</label>
-
-                        <div className="relative">
+                        <label
+                            for="email"
+                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                        >
                             <input
                                 type="email"
-                                name='email'
-                                className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                placeholder="Enter email"
+                                name="email"
+                                placeholder="Email"
+                                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                 value={formValues.email}
                                 onChange={handleChange}
-
-
+                                required
                             />
 
                             <span
-                                className="absolute inset-y-0 right-0 grid place-content-center px-4"
+                                class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-4 w-4 text-gray-400"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                                    />
-                                </svg>
+                                Email
                             </span>
-                        </div>
+                        </label>
                     </div>
 
                     <div>
-                        <label htmlFor="password" className="sr-only">Password</label>
-
-                        <div className="relative">
+                        <label
+                            for="password"
+                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                        >
                             <input
-                                name='password'
                                 type="password"
-                                className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                placeholder="Enter password"
-                                onChange={handleChange}
+                                name="password"
+                                placeholder="Password"
+                                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                 value={formValues.password}
+                                onChange={handleChange}
+                                required
                             />
 
                             <span
-                                className="absolute inset-y-0 right-0 grid place-content-center px-4"
+                                class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-4 w-4 text-gray-400"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                                    />
-                                </svg>
+                                Password
                             </span>
-                        </div>
+                        </label>
+
                     </div>
 
                     <button

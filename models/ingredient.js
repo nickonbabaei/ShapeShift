@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Ingredient.belongsToMany( models.Meal, { foreignKey: 'ingredientId', through: models.MealIngredient, onDelete: 'CASCADE', onUpdate: 'CASCADE'})
+      Ingredient.belongsTo( models.User, { foreignKey: 'userId', onDelete: 'CASCADE', onUpdate: 'CASCADE'})
     }
   }
   Ingredient.init({
@@ -25,7 +25,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     protein: DataTypes.STRING,
     carbs: DataTypes.STRING,
-    fat: DataTypes.STRING
+    fat: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Ingredient',
