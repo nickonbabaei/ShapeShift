@@ -1,20 +1,20 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const FoodCard = ({ searchResults }) => {
+const FoodCard = ({ resultName, resultNutrients }) => {
     return (
-        <ol className='flex'>
+        <ol className='flex w-full'>
             {/* <div class="flex flex-col items-center"> */}
-                <ul class="w-full bg-white rounded-lg shadow-md">
-                    <NavLink>
+            <ul class="w-full bg-white rounded-lg shadow-md">
+                <NavLink>
                     <li class="px-4 py-2 border-b border-gray-300 hover:bg-gray-100">
-                        <h4 className="text-gray-800 font-lg hover:text-blue-500">{searchResults.common[0].food_name}</h4>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">some description</p>
+                        <h4 className="text-gray-800 font-lg font-bold hover:text-blue-500"></h4>
+                        <p className="text-base text-gray-500 dark:text-gray-400"></p>
                     </li>
-                    </NavLink>
-                </ul>
-                <button>add food</button>
-                
+                </NavLink>
+            </ul>
+            <button>add food</button>
+
             {/* </div> */}
 
             {/* <li class="mb-2 pl-2 border-b-4">

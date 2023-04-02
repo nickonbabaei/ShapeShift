@@ -209,7 +209,7 @@ const Register = () => {
                             <div class="col-span-6 justify-center sm:flex sm:items-center sm:gap-4">
                                 <span class="mt-4 text-sm text-gray-500 sm:mt-0">
                                     Already have an account?
-                                    <NavLink to='{/}' class="text-gray-700 underline"> Log in</NavLink>.
+                                    <NavLink to={'/'} class="text-gray-700 underline"> Log in</NavLink>.
                                 </span>
                             </div>
                         </form>

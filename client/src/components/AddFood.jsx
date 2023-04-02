@@ -30,20 +30,35 @@ import { Modal } from '@mui/material'
 const AddFoodModal = React.forwardRef((props, ref) => {
     const { open, toggleOpen } = props
     const [searched, setSearched] = useState(null)
-    const [searchResults, setSearchResults] = useState('')
+    const [searchResults, setSearchResults] = useState(null)
+
     const handleChanges = (event) => {
         setSearched(event.target.value)
     }
 
     const getSearchResults = async (e) => {
         e.preventDefault()
-        const food = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${searched}`, {
+        const name = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${searched}`, {
             headers: {
                 'x-app-id': 'bec583d3',
                 'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY
             }
         })
-        setSearchResults(food.data)
+
+        let nutrientsArray = []
+        for (let foodName of name.data.common) {
+            const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": foodName.food_name }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-app-id': 'bec583d3',
+                    'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY,
+                    'x-remote-user-id': '0'
+                }
+            })
+            nutrientsArray.push(nutrients.data.foods[0])
+        }
+        setSearchResults(nutrientsArray)
+        
     }
 
 
@@ -56,7 +71,13 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                         <SearchBar handleChange={handleChanges} onSubmit={getSearchResults} />
                     </div>
                     <div className='container overflow-auto h-48'>
-                        {searchResults && <FoodCard searchResults={searchResults}/>}
+                        {/* {searchResults &&
+                            searchResults.map((result) => (
+
+                                <FoodCard key={result.tag_id} result={result} />
+
+                            ))
+                        } */}
                     </div>
                     <div>
                         <button onClick={toggleOpen}> close </button>
