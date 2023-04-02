@@ -23,7 +23,8 @@ const GoalPage = ({ user, handleLogout }) => {
     const handleGoalSubmit = async (e) => {
         e.preventDefault()
         await axios.put(`http://localhost:3001/api/goal/update/${goalInfo.Goal.id}`, editGoal)
-        navigate('/')
+        toggleOpen()
+        getGoalInfo()
        
     }
 

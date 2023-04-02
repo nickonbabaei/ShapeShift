@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const FoodCard = ({ name }) => {
+const FoodCard = ({ searchResults }) => {
     return (
         <ol className='flex'>
             {/* <div class="flex flex-col items-center"> */}
                 <ul class="w-full bg-white rounded-lg shadow-md">
                     <NavLink>
                     <li class="px-4 py-2 border-b border-gray-300 hover:bg-gray-100">
-                        <h4 className="text-gray-800 font-lg hover:text-blue-500">Ingredient 1</h4>
+                        <h4 className="text-gray-800 font-lg hover:text-blue-500">{searchResults.common[0].food_name}</h4>
                         <p class="text-base font-normal text-gray-500 dark:text-gray-400">some description</p>
                     </li>
                     </NavLink>

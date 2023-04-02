@@ -4,29 +4,18 @@ import Box from '@mui/material/Box';
 import axios from 'axios';
 import { Modal } from '@mui/material';
 
-const EditGoalForm = ({ open, editGoal, handleGoalChange, handleGoalSubmit }) => {
-    // const style = {
-    //     position: 'absolute',
-    //     top: '50%',
-    //     left: '50%',
-    //     transform: 'translate(-50%, -50%)',
-    //     width: 500,
-    //     bgcolor: 'background.paper',
-    //     border: '2px solid #000',
-    //     boxShadow: 24,
-    //     p: 2
-    // };
+const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalSubmit }) => {
 
 
 
     return (
-        // <Box sx={style}>
+
         <Modal
             open={open}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <div class=" rounded-lg bg-white p- shadow-lg lg:col-span-3 lg:p-4">
+            <div class=" mt-[10%] mr-[20%] ml-[20%] rounded-lg bg-white p- shadow-lg lg:col-span-3 lg:p-4">
                 <form onSubmit={handleGoalSubmit} class="space-y-4">
 
                     <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-4">
@@ -182,15 +171,18 @@ const EditGoalForm = ({ open, editGoal, handleGoalChange, handleGoalSubmit }) =>
                         >
                             Set Goal
                         </button>
+                        <button
+                            onClick={toggleOpen}
+                            class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                        >
+                            Cancel
+                        </button>
                     </div>
                 </form>
             </div>
 
         </Modal>
 
-
-
-        // </Box>
     )
 }
 
