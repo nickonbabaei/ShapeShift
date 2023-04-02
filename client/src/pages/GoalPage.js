@@ -1,15 +1,44 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav'
+import Box from '@mui/material/Box';
+// import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import EditGoalForm from '../components/EditGoalForm'
 
-const GoalPage = ({ user, handleLogout}) => {
-    const [goalInfo, setGoalInfo] = useState(null)
+const GoalPage = ({ user, handleLogout }) => {
+
+    const [open, setOpen] = useState(false);
+    const toggleOpen = () => setOpen(!open);
+    const [goalInfo, setGoalInfo] = useState()
+    const [editGoal, setEditGoal] = useState()
+
+    const handleGoalChange = (e) => {
+        setEditGoal({ ...editGoal, [e.target.id]: e.target.value })
+    }
+
+    const handleGoalSubmit = async (e) => {
+        e.preventDefault()
+        await axios.put(`http://localhost:3001/api/goal/update/${goalInfo.Goal.id}`, editGoal)
+        navigate('/')
+       
+    }
+
+    let navigate = useNavigate()
 
     const getGoalInfo = async () => {
         let response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
         setGoalInfo(response.data)
+        setEditGoal(response.data.Goal)
     }
+    // const getupdatedGoalInfo = async () => {
+    //     let response = await axios.get(`http://localhost:3001/api/user/get/${goalInfo.id}`)
+    //     setGoalInfo(response.data)
+    // }
+
 
     useEffect(() => {
         getGoalInfo()
@@ -20,9 +49,12 @@ const GoalPage = ({ user, handleLogout}) => {
 
 
 
+
+
+
     return goalInfo && (
         <section class="bg-gray-900 text-white">
-            <Nav handleLogout={handleLogout}/>
+            <Nav handleLogout={handleLogout} />
             <div
                 class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
             >
@@ -129,14 +161,18 @@ const GoalPage = ({ user, handleLogout}) => {
                 </div>
 
                 <div class="mt-12 text-center">
-                    <a
-                        href="#"
+                    <button
+                        onClick={toggleOpen}
                         class="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
                     >
-                        Edit Info
-                    </a>
+                        Update Info/Goal
+                    </button>
                 </div>
             </div>
+            {open && <EditGoalForm toggleOpen={toggleOpen} open={open} editGoal={editGoal} handleGoalChange={handleGoalChange} handleGoalSubmit={handleGoalSubmit}/>}
+                
+            
+
         </section>
 
     )

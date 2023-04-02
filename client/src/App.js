@@ -37,8 +37,9 @@ function App() {
 
   return (
     <div className="App">
+      <Nav handleLogout={handleLogOut}/>
       <main className=''>
-        {user?.id ?
+        {user?.email ?
           <Routes>
             <Route path='/' element={<Home handleLogout={handleLogOut}/>} />
             <Route path='/login' element={<Login setUser={setUser} />} />

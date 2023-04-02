@@ -1,21 +1,21 @@
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SearchBar from './SearchBar'
 import FoodCard from './FoodCard'
 
 const AddFood = () => {
-    const [searched, setSearched] = useState()
+    const [searched, setSearched] = useState(null)
     const [searchResults, setSearchResults] = useState(null)
 
 
-    const getSearchResults = async (e) => {
-        e.preventDefault()
-        const food = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=%22${searched}%22&dataType=&sortBy=dataType.keyword&api_key=${process.env.REACT_APP_USDA_API_KEY}`)
-        setSearchResults(food.data)
-        console.log(searchResults.data)
-        setSearched('')
-    }
+    // const getSearchResults = async (e) => {
+ 
+    //     const food = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=%22steak%22&dataType=&sortBy=dataType.keyword&api_key=${process.env.REACT_APP_USDA_API_KEY}`).catch(function(error) {console.log(error)})
+    //     setSearchResults(food?.data)
+    //     console.log(searchResults.data)
+    //     setSearched('')
+    // }
 
     const handleChange = (event) => {
         setSearched(event.target.value)
@@ -31,7 +31,7 @@ const AddFood = () => {
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-lg border-4 border-slate-400">
                 <div className='mx-auto'>
-                <SearchBar handleChange={handleChange} onSubmit={getSearchResults} />
+                <SearchBar handleChange={handleChange} />
                 </div>
 
                 {/* <button
@@ -52,8 +52,9 @@ const AddFood = () => {
 
 
                         ))  
-                    }
-                    <FoodCard /> */}
+                    } */}
+                    <FoodCard />
+                    <FoodCard />
                 </div>
                 {/* <form
                     action=""

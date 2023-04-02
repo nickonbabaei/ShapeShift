@@ -5,7 +5,7 @@ const SearchBar = ({ handleChange, onSubmit }) => {
 
     return (
         <div className='relative'>
-            <form class='flex justify-center border-b-4' onSubmit={onSubmit}>
+            <form class='flex border-b-4' onSubmit={onSubmit}>
                 <input
                     type="text"
                     name='search'
