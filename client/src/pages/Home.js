@@ -5,19 +5,21 @@ import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
 
 
-const Home = ({ handleLogout }) => {
+const Home = ({ handleLogout, user }) => {
 
   let [open, setOpen] = useState(false)
   const [selectedFood, setSelectedFood] = useState(null)
-  const [searchResults, setSearchResults] = useState(null)
+  const [logged, setLogged] = useState(null)
+  const [userInfo, setUserInfo] = useState(null)
 
-  // useEffect(() => {
-
-  // }, [])
-  const handleChange = (event) => {
-    setSearchResults(event.target.value)
-
+  const getUserInfo = async () => {
+    const response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
+    setUserInfo(response.data)
   }
+
+  useEffect(() => {
+    getUserInfo()
+  }, [])
 
   const toggleOpen = () => {
     setOpen(!open)
@@ -29,7 +31,7 @@ const Home = ({ handleLogout }) => {
       <header>
         <Nav handleLogout={handleLogout} />
       </header>
-      {open && <AddFoodModal open={open} toggleOpen={toggleOpen}/>}
+      {open && <AddFoodModal open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg border-2 border-black">
           <button
@@ -38,7 +40,25 @@ const Home = ({ handleLogout }) => {
           >
             Add Food
           </button>
-          
+          {/* <div>
+            {userInfo?.Ingredient ?
+              <div>
+                {
+                  userInfo.Ingredient.map((food) => (
+                    
+
+                    ))
+
+                }
+
+              </div>
+              :
+            
+
+
+          }
+          </div> */}
+
         </div>
       </div>
 

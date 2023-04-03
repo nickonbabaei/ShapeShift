@@ -41,7 +41,7 @@ function App() {
       <main className=''>
         {user?.email ?
           <Routes>
-            <Route path='/' element={<Home handleLogout={handleLogOut}/>} />
+            <Route path='/' element={<Home user={user} handleLogout={handleLogOut}/>} />
             <Route path='/login' element={<Login setUser={setUser} />} />
             <Route path='/register' element={<Register />} />
             <Route path='/about' element={<About handleLogout={handleLogOut}/>} />

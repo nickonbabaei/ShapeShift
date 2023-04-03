@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import SearchBar from './SearchBar'
 import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
+import { NavLink } from 'react-router-dom'
 
 // const AddFood = () => {
 // const [searched, setSearched] = useState(null)
@@ -130,8 +131,9 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                             searchResults.map((result) => (
                                 <FoodCard result={result} />
                             ))
-                        } */}
-                                <FoodCard result={searchResults} toggleDetails={toggleDetails} />
+                        } */}<NavLink onClick={toggleDetails}>
+                                <FoodCard result={searchResults} />
+                                </NavLink>
                             </div>
                             <div>
                                 <button onClick={toggleOpen}> close </button>
