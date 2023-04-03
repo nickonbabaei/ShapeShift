@@ -44,7 +44,7 @@ const Nav = ({handleLogout}) => {
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
                             <NavLink
-                                className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
+                                className="block rounded-md bg-cyan-400 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
                                 onClick={handleLogout}
                                 to={"/"}
                             >

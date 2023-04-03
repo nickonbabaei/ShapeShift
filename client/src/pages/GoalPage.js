@@ -54,29 +54,23 @@ const GoalPage = ({ user, handleLogout }) => {
 
 
     return goalInfo && (
-        <section class="bg-gray-900 text-white">
+        <section class="bg-slate-200 text-black">
             <Nav handleLogout={handleLogout} />
             <div
                 class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
             >
-                <div class="mx-auto max-w-lg text-center">
+                <div class="mx-auto max-w-lg text-center pb-6">
                     <h2 class="text-3xl font-bold sm:text-4xl"> {goalInfo.username.split(' ')[0]}'s Information and Goal</h2>
-
-                    <p class="mt-4 text-gray-300">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur
-                        aliquam doloribus nesciunt eos fugiat. Vitae aperiam fugit consequuntur
-                        saepe laborum.
-                    </p>
                 </div>
 
                 <div class="mt-8 grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition"
 
                     >
-                        <h2 class="mt-4 text-xl font-bold text-white">Activity Level</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">Activity Level</h2>
 
-                        <p class="mt-1 text-sm text-gray-300">
+                        <p class="mt-1 text-sm text-black">
                             {goalInfo.Goal.activity === '1.2' ? 'Sedentary (little or no exercise)'
                                 : goalInfo.Goal.activity === '1.375' ? 'Lightly active (light exercise/sports 1-3 days/week)'
                                     : goalInfo.Goal.activity === '1.55' ? 'Moderately active (moderate exercise/sports 3-5 days/week)'
@@ -88,13 +82,13 @@ const GoalPage = ({ user, handleLogout }) => {
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition "
                         href="/services/digital-campaigns"
                     >
 
-                        <h2 class="mt-4 text-xl font-bold text-white">Body Goal</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">Body Goal</h2>
 
-                        <p class="mt-1 text-sm text-gray-300">
+                        <p class="mt-1 text-sm text-black">
                             {goalInfo.Goal.description === '600' ? 'Dirty bulk (gain weight/muscle with no regards to fat gain)'
                                 : goalInfo.Goal.description === '300' ? 'Lean bulk (gain weight/muscle while putting on minimal fat)'
                                     : goalInfo.Goal.description === '0' ? 'Maintain your current weight'
@@ -106,65 +100,65 @@ const GoalPage = ({ user, handleLogout }) => {
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition "
                     >
 
-                        <h2 class="mt-4 text-xl font-bold text-white">{goalInfo.Goal.age} years old</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.age} years old</h2>
 
-                        {/* <p class="mt-1 text-sm text-gray-300">
+                        {/* <p class="mt-1 text-sm text-black">
 
                         </p> */}
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10 lg:row-start-3"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
 
                     >
 
 
-                        <h2 class="mt-4 text-xl font-bold text-white">{goalInfo.Goal.height} centimeters tall</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.height} centimeters tall</h2>
 
-                        <p class="mt-1 text-sm text-gray-300">
+                        <p class="mt-1 text-sm text-black">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
                             possimus adipisci distinctio alias voluptatum blanditiis laudantium.
                         </p>
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10 lg:row-start-3"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
 
                     >
 
-                        <h2 class="mt-4 text-xl font-bold text-white">Weighing in at {goalInfo.Goal.weight} kilograms</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">Weighing in at {goalInfo.Goal.weight} kilograms</h2>
 
-                        <p class="mt-1 text-sm text-gray-300">
+                        <p class="mt-1 text-sm text-black">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
                             possimus adipisci distinctio alias voluptatum blanditiis laudantium.
                         </p>
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10 lg:row-start-3"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
                     >
-                        <h2 class="mt-4 text-xl font-bold text-white">{goalInfo.Goal.sex.charAt(0).toUpperCase() + goalInfo.Goal.sex.slice(1)}</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.sex.charAt(0).toUpperCase() + goalInfo.Goal.sex.slice(1)}</h2>
 
-                        <p class="mt-1 text-sm text-gray-300">
+                        <p class="mt-1 text-sm text-black">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
                             possimus adipisci distinctio alias voluptatum blanditiis laudantium.
                         </p>
                     </a>
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10 lg:row-start-2 lg:col-start-2"
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-2 lg:col-start-2"
                     >
 
-                        <h2 class="mt-4 text-xl font-bold text-white">Based on your goal, you need {goalInfo.Goal.calories} calories per day</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black">Based on your goal, you need {goalInfo.Goal.calories} calories per day</h2>
                     </a>
                 </div>
 
                 <div class="mt-12 text-center">
                     <button
                         onClick={toggleOpen}
-                        class="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+                        class="inline-block rounded bg-cyan-400 px-12 py-3 text-sm font-medium text-black transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
                     >
                         Update Info/Goal
                     </button>

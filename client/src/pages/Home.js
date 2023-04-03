@@ -47,7 +47,7 @@ const Home = ({ handleLogout, user }) => {
     <div>
       <header>
         <Nav handleLogout={handleLogout} />
-        <Header text='Home'/>
+        <Header text='Home' />
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -74,28 +74,22 @@ const Home = ({ handleLogout, user }) => {
 
             {
               userInfo && userInfo.Ingredients.length > 0 ?
-              <div>
+                <div>
                   {
                     userInfo.Ingredients.map((food) => (
-                      <HomeFoodCard food={food} deleteLog={deleteLog}/>
+                      <HomeFoodCard food={food} deleteLog={deleteLog} />
                     ))
 
                   }
                 </div>
-                
+
                 :
                 <div className='flex justify-center'>
                   <h1 className='font-bold text-3xl pt-2'>Nothing logged! Lets get logging </h1>
                 </div>
-                
+
 
             }
-            {/* {
-              userInfo.Ingredients.map((food) => (
-                <HomeFoodCard food={food} />
-              ))
-
-            } */}
 
 
 
