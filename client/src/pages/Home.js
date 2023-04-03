@@ -6,6 +6,7 @@ import AddFoodModal from '../components/AddFoodModal'
 import HomeFoodCard from '../components/HomeFoodCard'
 import { NavLink } from 'react-router-dom'
 import Header from '../components/Header'
+import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 
 
 const Home = ({ handleLogout, user }) => {
@@ -44,14 +45,16 @@ const Home = ({ handleLogout, user }) => {
 
 
   return (
-    <div>
+    <div className='bg-sky-200'>
       <header>
         <Nav handleLogout={handleLogout} />
-        <Header text='Home' />
+        {/* <Header text='Home' /> */}
+        <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{borderRadius: '4px', width: '30rem' }}/> </div>
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
+          
           <div className='flex justify-center pb-4'>
             <h1 className='font-mono text-5xl font-bold underline'>Your Logged Food</h1>
           </div>
@@ -69,7 +72,7 @@ const Home = ({ handleLogout, user }) => {
               Clear Log
             </button>
           </div>
-          <div className='p-4 round-md shadow-xl container overflow-auto h-80'>
+          <div className='p-4 round-md shadow-xl container bg-slate-100 overflow-auto h-80'>
 
 
             {
