@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
+import HomeFoodCard from '../components/HomeFoodCard'
 
 
 const Home = ({ handleLogout, user }) => {
@@ -26,6 +27,7 @@ const Home = ({ handleLogout, user }) => {
   }
 
 
+
   return (
     <div>
       <header>
@@ -40,24 +42,26 @@ const Home = ({ handleLogout, user }) => {
           >
             Add Food
           </button>
-          {/* <div>
+          <div>
             {userInfo?.Ingredient ?
               <div>
                 {
                   userInfo.Ingredient.map((food) => (
-                    
-
-                    ))
+                    <HomeFoodCard food={food} />
+                  ))
 
                 }
 
               </div>
               :
-            
+              <div>
+                nothing logged
+              </div>
 
 
-          }
-          </div> */}
+
+            }
+          </div>
 
         </div>
       </div>

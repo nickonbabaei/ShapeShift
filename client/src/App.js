@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav handleLogout={handleLogOut}/>
+      {/* <Nav handleLogout={handleLogOut}/> */}
       <main className=''>
         {user?.email ?
           <Routes>
