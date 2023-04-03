@@ -1,15 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const FoodCard = ({ resultName, resultNutrients }) => {
+const FoodCard = ({ result, toggleDetails }) => {
     return (
         <ol className='flex w-full'>
             {/* <div class="flex flex-col items-center"> */}
             <ul class="w-full bg-white rounded-lg shadow-md">
-                <NavLink>
+                <NavLink onClick={toggleDetails}>
                     <li class="px-4 py-2 border-b border-gray-300 hover:bg-gray-100">
-                        <h4 className="text-gray-800 font-lg font-bold hover:text-blue-500"></h4>
-                        <p className="text-base text-gray-500 dark:text-gray-400"></p>
+                        <h4 className="text-gray-800 font-lg font-bold hover:text-blue-500">{result.food_name}</h4>
+                        <p className="text-base text-gray-500 dark:text-gray-400">{Math.round(result.nf_calories)} cal, {result.serving_qty} {result.serving_unit}</p>
                     </li>
                 </NavLink>
             </ul>
