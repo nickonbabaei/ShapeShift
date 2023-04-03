@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Nav from '../components/Nav'
 
-const SetGoal = ({ user, handleLogout }) => {
+const SetGoal = ({ user }) => {
+  let {user_id} = useParams()
   const initalState = {
     age: '',
     weight: '',
@@ -13,9 +14,10 @@ const SetGoal = ({ user, handleLogout }) => {
     description: '',
     sex: ''
   }
+  let navigate = useNavigate()
   const [goal, setGoal] = useState(initalState)
 
-  let navigate = useNavigate()
+  
 
   const handleChange = (e) => {
     setGoal({ ...goal, [e.target.id]: e.target.value })
@@ -23,7 +25,7 @@ const SetGoal = ({ user, handleLogout }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`http://localhost:3001/api/goal/create/${user.id}`, goal)
+    await axios.post(`http://localhost:3001/api/goal/create/${user_id}`, goal)
     setGoal(initalState)
     navigate('/home')
   }
@@ -33,7 +35,7 @@ const SetGoal = ({ user, handleLogout }) => {
 
   return (
     <section class="bg-gray-100">
-      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div class="lg:col-span-2 lg:py-12">
             <p class="max-w-xl text-lg">

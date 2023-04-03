@@ -36,7 +36,9 @@ const createIngredient = async (req, res) => {
 const deleteIngredient = async (req, res) => {
     try {
         const id = req.params.ingredient_id
-        await Ingredient.destroy(id)
+        await Ingredient.destroy({
+            where: {id: id}
+        })
         res.send({ 'message': `Ingredient with ID:${id} was deleted` })
     } catch (error) {
         throw error

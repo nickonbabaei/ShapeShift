@@ -42,9 +42,6 @@ function App() {
         {user?.email ?
           <Routes>
             <Route path='/' element={<Home user={user} handleLogout={handleLogOut}/>} />
-            <Route path='/login' element={<Login setUser={setUser} />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/about' element={<About handleLogout={handleLogOut}/>} />
             <Route path='/setgoal' element={<SetGoal user={user} handleLogout={handleLogOut} />} />
             <Route path='/goalpage' element={<GoalPage user={user} handleLogout={handleLogOut}/>} />
           </Routes>
@@ -52,8 +49,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Login setUser={setUser} />} />
             <Route path='/home' element={<Home handleLogout={handleLogOut}/>} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/about' element={<About />} />
+            <Route path='/register' element={<Register setUser={setUser}/>} />
             <Route path='/setgoal' element={<SetGoal user={user} />} />
             <Route path='/goalpage' element={<GoalPage user={user} />} />
           </Routes>

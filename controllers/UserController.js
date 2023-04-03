@@ -1,4 +1,4 @@
-const { Goal, User, Meal } = require('../models')
+const { Goal, User, Ingredient } = require('../models')
 
 const getUser = async (req, res) => {
     try {

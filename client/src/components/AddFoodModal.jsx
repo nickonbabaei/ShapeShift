@@ -29,7 +29,7 @@ import { NavLink } from 'react-router-dom'
 // }, [])
 
 const AddFoodModal = React.forwardRef((props, ref) => {
-    const { open, toggleOpen, user } = props
+    const { open, toggleOpen, user, getUserInfo } = props
     const [renderDetails, setRenderDetails] = useState(false)
     const [searched, setSearched] = useState(null)
     const [foodDetails, setFoodDetails] = useState(null)
@@ -55,7 +55,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
         })
 
         let nutrientsArray = []
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": name.data.common[i].food_name }, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -76,20 +76,22 @@ const AddFoodModal = React.forwardRef((props, ref) => {
         toggleDetails()
     }
 
-    const logFood = async (food) => {
+    const logFood = async () => {
         setFoodBody({
-            'userId': user.id,
-            'name': food.food_name,
-            'calories': food.nf_calories,
-            'protein': food.nf_protein,
-            'carbs': food.nf_total_carbohydrate,
-            'fat': food.nf_total_fat,
-            'servingInfo': `(1 serving = ${foodDetails.serving_qty} ${foodDetails.serving_unit} or ${foodDetails.serving_weight_grams} g)`,
+            'userId': user?.id,
+            'name': foodDetails?.food_name,
+            'calories': foodDetails?.nf_calories,
+            'protein': foodDetails?.nf_protein,
+            'carbs': foodDetails?.nf_total_carbohydrate,
+            'fat': foodDetails?.nf_total_fat,
+            'servingInfo': `(1 serving = ${foodDetails?.serving_qty} ${foodDetails?.serving_unit} or ${foodDetails?.serving_weight_grams} g)`,
             'servingSize': 1
         })
 
         await axios.post('http://localhost:3001/api/ingredient/create', foodBody)
         setFoodBody(null)
+        setFoodDetails(null)
+        getUserInfo()
         toggleOpen()
     }
 
@@ -131,7 +133,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <label for="servings" class="mr-2 font-semibold">Servings:</label>
                                 <input id="servings" type="number" min="1" max="10" value="1" class="p-2 border rounded-md shadow-md" />
                             </div>
-                            <div onClick={() => logFood(foodDetails)} className='flex justify-center pt-4'>
+                            <div onClick={logFood} className='flex justify-center pt-4'>
                                 <button className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 ">
                                     Add Food
                                 </button>
