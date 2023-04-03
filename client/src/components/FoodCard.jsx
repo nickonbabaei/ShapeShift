@@ -11,7 +11,6 @@ const FoodCard = ({ result, getSpecificFood}) => {
                         <p className="text-base text-gray-500 dark:text-gray-400">{Math.round(result.calories)} cal, {result.serving_qty} {result.serving_unit}</p>
                     </li>
                 </NavLink>
-
             </ul>
         </ol>
     )

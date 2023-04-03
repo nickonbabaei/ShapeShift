@@ -29,31 +29,12 @@ import { NavLink } from 'react-router-dom'
 // }, [])
 
 const AddFoodModal = React.forwardRef((props, ref) => {
-    const { open, toggleOpen } = props
+    const { open, toggleOpen, user } = props
     const [renderDetails, setRenderDetails] = useState(false)
     const [searched, setSearched] = useState(null)
     const [foodDetails, setFoodDetails] = useState(null)
-    const [searchResults, setSearchResults] = useState([{
-        'food_name': 'cheese',
-        'calories': '100',
-        'protein': 12,
-        'fat': 8,
-        'carbs': 20,
-        'serving_qty': 1,
-        'serving_unit': 'slice',
-        'serving_wght_g': 28
-
-    }, {
-        'food_name': 'steak',
-        'calories': '250',
-        'protein': 30,
-        'fat': 8,
-        'carbs': 20,
-        'serving_qty': 1,
-        'serving_unit': 'filet',
-        'serving_wght_g': 200
-
-    }])
+    const [foodBody, setFoodBody] = useState(null)
+    const [searchResults, setSearchResults] = useState(null)
 
     const toggleDetails = () => {
         setRenderDetails(!renderDetails)
@@ -65,35 +46,53 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
     const getSearchResults = async (e) => {
         e.preventDefault()
-        // console.log(searchResults)
-        // const name = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${searched}`, {
-        //     headers: {
-        //         'x-app-id': 'bec583d3',
-        //         'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY
-        //     }
-        // })
+        setSearchResults(null)
+        const name = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${searched}`, {
+            headers: {
+                'x-app-id': 'bec583d3',
+                'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY
+            }
+        })
 
-        // let nutrientsArray = []
-        // for (let foodName of name.data.common) {
-        //     const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": foodName.food_name }, {
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'x-app-id': 'bec583d3',
-        //             'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY,
-        //             'x-remote-user-id': '0'
-        //         }
-        //     })
-        //     nutrientsArray.push(nutrients.data.foods[0])
-        // }
-        // setSearchResults(nutrientsArray)
+        let nutrientsArray = []
+        for (let i = 0; i < 3; i++) {
+            const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": name.data.common[i].food_name }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-app-id': 'bec583d3',
+                    'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY,
+                    'x-remote-user-id': '0'
+                }
+            })
+            nutrientsArray.push(nutrients.data.foods[0])
+        }
+        setSearchResults(nutrientsArray)
+        nutrientsArray = []
     }
 
     const getSpecificFood = (food) => {
         setFoodDetails(food)
+        console.log(foodDetails)
         toggleDetails()
-
-
     }
+
+    const logFood = async (food) => {
+        setFoodBody({
+            'userId': user.id,
+            'name': food.food_name,
+            'calories': food.nf_calories,
+            'protein': food.nf_protein,
+            'carbs': food.nf_total_carbohydrate,
+            'fat': food.nf_total_fat,
+            'servingInfo': `(1 serving = ${foodDetails.serving_qty} ${foodDetails.serving_unit} or ${foodDetails.serving_weight_grams} g)`,
+            'servingSize': 1
+        })
+
+        await axios.post('http://localhost:3001/api/ingredient/create', foodBody)
+        setFoodBody(null)
+        toggleOpen()
+    }
+
 
 
     return (
@@ -108,31 +107,31 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                             </div>
                             <div class="flex-col ml-4 mr-4 sm:justify-start">
                                 <h2 class="text-2xl font-bold justify-center">Nutrition Information for {foodDetails.food_name}</h2>
-                                <h5 >(1 serving = {foodDetails.serving_qty} {foodDetails.serving_unit} or {foodDetails.serving_wght_g} g)</h5>
+                                <h5 >(1 serving = {foodDetails.serving_qty} {foodDetails.serving_unit} or {foodDetails.serving_weight_grams} g)</h5>
                             </div>
                             <div class="flex justify-center sm:justify-center mr-4 pt-4 sm:mt-0">
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4 sm:mt-0">
                                     <p class="text-lg font-semibold underline">Calories</p>
-                                    <p id="calories" class="text-lg font-bold">{foodDetails.calories}</p>
+                                    <p id="calories" class="text-lg font-bold">{Math.round(foodDetails.nf_calories * 10) / 10}</p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4 sm:mt-0">
                                     <p class="text-lg font-semibold underline">Protein</p>
-                                    <p id="protein" class="text-lg font-bold">{foodDetails.protein}g</p>
+                                    <p id="protein" class="text-lg font-bold">{Math.round(foodDetails.nf_protein * 10) / 10}g</p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4 sm:mt-0">
                                     <p class="text-lg font-semibold underline">Carbs</p>
-                                    <p id="carbs" class="text-lg font-bold">{foodDetails.carbs}g</p>
+                                    <p id="carbs" class="text-lg font-bold">{Math.round(foodDetails.nf_total_carbohydrate * 10) / 10}g</p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mt-4 sm:mt-0">
                                     <p class="text-lg font-semibold underline">Fat</p>
-                                    <p id="fat" class="text-lg font-bold">{foodDetails.fat}g</p>
+                                    <p id="fat" class="text-lg font-bold">{Math.round(foodDetails.nf_total_fat * 10) / 10}g</p>
                                 </div>
                             </div>
                             <div class="mt-4 items-center flex justify-center">
                                 <label for="servings" class="mr-2 font-semibold">Servings:</label>
                                 <input id="servings" type="number" min="1" max="10" value="1" class="p-2 border rounded-md shadow-md" />
                             </div>
-                            <div className='flex justify-center pt-4'>
+                            <div onClick={() => logFood(foodDetails)} className='flex justify-center pt-4'>
                                 <button className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 ">
                                     Add Food
                                 </button>
@@ -144,17 +143,17 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <SearchBar handleChange={handleChanges} onSubmit={getSearchResults} />
                             </div>
                             <div className='container overflow-auto h-60'>
-                                {/* {searchResults &&
-                            searchResults.map((result) => (
-                                <FoodCard result={result} />
-                            ))
-                        } */}
-                             
-                                <FoodCard result={searchResults[0]} getSpecificFood={getSpecificFood} />                   
-                                <FoodCard result={searchResults[1]} getSpecificFood={getSpecificFood} />
-                                
-                                
-                                
+                                {searchResults &&
+                                    searchResults.map((result) => (
+                                        <FoodCard result={result} getSpecificFood={getSpecificFood} />
+                                    ))
+                                }
+
+                                {/* <FoodCard result={searchResults[0]} getSpecificFood={getSpecificFood} />                   
+                                <FoodCard result={searchResults[1]} getSpecificFood={getSpecificFood} /> */}
+
+
+
 
                             </div>
                             <div>
