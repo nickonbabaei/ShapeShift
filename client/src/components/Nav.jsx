@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Nav = ({handleLogout}) => {
 
     return (
-        <header aria-label="Site Header" className="bg-slate-200">
+        <header aria-label="Site Header" className="bg-slate-100">
             <div
                 className="mx-auto flex h-14 max-w-screen items-center gap-8 px-4 sm:px-6 lg:px-8"
             >
@@ -21,10 +21,12 @@ const Nav = ({handleLogout}) => {
                             fill="currentColor"
                         />
                     </svg>
+
+                    
                 </NavLink>
 
-                <div className="flex flex-1 items-center justify-end md:justify-between">
-                    <nav aria-label="Site Nav" className="hidden md:block">
+                <div className="flex flex-1 items-center justify-end gap-6">
+                    <nav aria-label="Site Nav">
                         <ul className="flex items-center gap-6 text-sm">
                            
                             <li>
@@ -50,7 +52,7 @@ const Nav = ({handleLogout}) => {
                             </NavLink>
                         </div>
 
-                        <button
+                        {/* <button
                             className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
                         >
                             <span className="sr-only">Toggle menu</span>
@@ -68,7 +70,7 @@ const Nav = ({handleLogout}) => {
                                     d="M4 6h16M4 12h16M4 18h16"
                                 />
                             </svg>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

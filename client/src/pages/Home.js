@@ -5,6 +5,7 @@ import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
 import HomeFoodCard from '../components/HomeFoodCard'
 import { NavLink } from 'react-router-dom'
+import Header from '../components/Header'
 
 
 const Home = ({ handleLogout, user }) => {
@@ -46,10 +47,14 @@ const Home = ({ handleLogout, user }) => {
     <div>
       <header>
         <Nav handleLogout={handleLogout} />
+        <Header text='Home'/>
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
+          <div className='flex justify-center pb-4'>
+            <h1 className='font-mono text-5xl font-bold underline'>Your Logged Food</h1>
+          </div>
           <div className='flex justify-between'>
             <button
               class="inline-block rounded bg-indigo-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
@@ -64,13 +69,12 @@ const Home = ({ handleLogout, user }) => {
               Clear Log
             </button>
           </div>
-          <div className='mt-4 p-4 round-md shadow-md container overflow-auto h-80'>
+          <div className='p-4 round-md shadow-xl container overflow-auto h-80'>
 
 
             {
-              userInfo ?
+              userInfo && userInfo.Ingredients.length > 0 ?
               <div>
-                {console.log(userInfo.Ingredients)}
                   {
                     userInfo.Ingredients.map((food) => (
                       <HomeFoodCard food={food} deleteLog={deleteLog}/>
@@ -80,8 +84,8 @@ const Home = ({ handleLogout, user }) => {
                 </div>
                 
                 :
-                <div>
-                  nothing logged
+                <div className='flex justify-center'>
+                  <h1 className='font-bold text-3xl pt-2'>Nothing logged! Lets get logging </h1>
                 </div>
                 
 
