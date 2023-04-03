@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     servingSize: DataTypes.STRING,
     calories: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     protein: DataTypes.STRING,
