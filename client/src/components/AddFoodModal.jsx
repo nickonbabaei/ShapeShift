@@ -55,16 +55,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     }
 
     const logFood = async () => {
-        // setFoodBody({
-        //     'userId': user.id,
-        //     'name': foodDetails.food_name,
-        //     'calories': foodDetails.nf_calories,
-        //     'protein': foodDetails.nf_protein,
-        //     'carbs': foodDetails.nf_total_carbohydrate,
-        //     'fat': foodDetails.nf_total_fat,
-        //     'servingInfo': `(1 serving = ${foodDetails.serving_qty} ${foodDetails.serving_unit} or ${foodDetails.serving_weight_grams} g)`,
-        //     'servingSize': 1
-        // })
 
         await axios.post('http://localhost:3001/api/ingredient/create', {
             'userId': user.id,
@@ -76,7 +66,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
             'servingInfo': `(1 serving = ${foodDetails.serving_qty} ${foodDetails.serving_unit} or ${foodDetails.serving_weight_grams} g)`,
             'servingSize': 1
         })
-        // setFoodBody(null)
         setFoodDetails(null)
         getUserInfo()
         toggleOpen()
@@ -138,12 +127,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                     ))
                                 }
 
-                                {/* <FoodCard result={searchResults[0]} getSpecificFood={getSpecificFood} />                   
-                                <FoodCard result={searchResults[1]} getSpecificFood={getSpecificFood} /> */}
-
-
-
-
                             </div>
                             <div>
                                 <button onClick={toggleOpen} className='rounded-b-lg ml-2'> close </button>
@@ -159,6 +142,5 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
 })
 
-// }
 
 export default AddFoodModal
