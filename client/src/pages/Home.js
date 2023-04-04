@@ -41,11 +41,6 @@ const Home = ({ handleLogout, user }) => {
     getUserInfo()
   }
 
-  // const calculateSum = () => {
-
-  // }
-
-
 
   return (
     <div className='bg-sky-200'>

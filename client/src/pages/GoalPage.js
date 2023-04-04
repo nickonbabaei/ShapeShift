@@ -1,12 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav'
-import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 import EditGoalForm from '../components/EditGoalForm'
 import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 
@@ -29,30 +24,17 @@ const GoalPage = ({ user, handleLogout }) => {
        
     }
 
-    let navigate = useNavigate()
 
     const getGoalInfo = async () => {
         let response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
         setGoalInfo(response.data)
         setEditGoal(response.data.Goal)
     }
-    // const getupdatedGoalInfo = async () => {
-    //     let response = await axios.get(`http://localhost:3001/api/user/get/${goalInfo.id}`)
-    //     setGoalInfo(response.data)
-    // }
 
 
     useEffect(() => {
         getGoalInfo()
     }, [])
-
-
-
-
-
-
-
-
 
     return goalInfo && (
         <section class="bg-sky-200 text-black">
@@ -107,10 +89,6 @@ const GoalPage = ({ user, handleLogout }) => {
                     >
 
                         <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.age} years old</h2>
-
-                        {/* <p class="mt-1 text-sm text-black">
-
-                        </p> */}
                     </a>
 
                     <a
