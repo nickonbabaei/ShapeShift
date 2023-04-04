@@ -12,7 +12,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     const [renderDetails, setRenderDetails] = useState(false)
     const [searched, setSearched] = useState(null)
     const [foodDetails, setFoodDetails] = useState(null)
-    const [foodBody, setFoodBody] = useState(null)
     const [searchResults, setSearchResults] = useState(null)
 
     const toggleDetails = () => {
