@@ -6,27 +6,6 @@ import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 
-// const AddFood = () => {
-// const [searched, setSearched] = useState(null)
-//     const [searchResults, setSearchResults] = useState(null)
-
-
-// const getSearchResults = async (e) => {
-
-//     const food = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=%22steak%22&dataType=&sortBy=dataType.keyword&api_key=${process.env.REACT_APP_USDA_API_KEY}`).catch(function(error) {console.log(error)})
-//     setSearchResults(food?.data)
-//     console.log(searchResults.data)
-//     setSearched('')
-// }
-
-// const handleChange = (event) => {
-//     setSearched(event.target.value)
-
-// }
-
-// useEffect(() => {
-//     getSearchResults()
-// }, [])
 
 const AddFoodModal = React.forwardRef((props, ref) => {
     const { open, toggleOpen, user, getUserInfo } = props
