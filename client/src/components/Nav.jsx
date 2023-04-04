@@ -9,7 +9,7 @@ const Nav = ({handleLogout}) => {
             <div
                 className="mx-auto flex h-14 max-w-screen items-center gap-8 px-4 sm:pr-6 lg:px-4"
             >
-                <NavLink className="pl-6 block text-sky-600 hover:text-gray-500/75" to={"/"}>
+                <NavLink className="pl-6 block text-sky-600 hover:text-white" to={"/"}>
                     <span className="sr-only">Home</span>
                     <h1>Dashboard</h1>
                     
@@ -22,7 +22,7 @@ const Nav = ({handleLogout}) => {
                     <nav aria-label="Site Nav">
                         <ul className="flex items-center gap-6 text-sm">
                             <li>
-                                <NavLink className="text-sky-600 transition hover:text-gray-500/75" to='goalpage'>
+                                <NavLink className="text-sky-600 transition hover:text-white" to='goalpage'>
                                     Info/Goal
                                 </NavLink>
                             </li>
