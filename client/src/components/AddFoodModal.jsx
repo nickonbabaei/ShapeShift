@@ -55,7 +55,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
         })
 
         let nutrientsArray = []
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 8; i++) {
             const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": name.data.common[i].food_name }, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <input id="servings" type="number" min="1" max="10" value="1" class="p-2 border rounded-md shadow-md" />
                             </div>
                             <div onClick={logFood} className='flex justify-center pt-4'>
-                                <button className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 ">
+                                <button className="block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-600 ">
                                     Add Food
                                 </button>
                             </div>
@@ -168,7 +168,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
                             </div>
                             <div>
-                                <button onClick={toggleOpen}> close </button>
+                                <button onClick={toggleOpen} className='rounded-b-lg'> close </button>
                             </div>
                         </div>
                     }

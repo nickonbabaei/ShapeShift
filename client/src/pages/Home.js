@@ -62,19 +62,19 @@ const Home = ({ handleLogout, user }) => {
           </div>
           <div className='flex justify-between'>
             <button
-              class="inline-block rounded bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+              class="inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
               onClick={toggleOpen}
             >
               Add Food
             </button>
             <button
-              class="inline-block rounded bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+              class="inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
               onClick={clearLog}
             >
               Clear Log
             </button>
           </div>
-          <div className='p-4 round-md shadow-xl container bg-slate-100 overflow-auto h-80'>
+          <div className='p-4 rounded-lg shadow-xl container bg-slate-100 overflow-auto h-80'>
             {
               userInfo && userInfo.Ingredients.length > 0 ?
                 <div>
