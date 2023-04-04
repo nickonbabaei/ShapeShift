@@ -1,10 +1,10 @@
 import React from 'react'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import SearchBar from './SearchBar'
 import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
-import { NavLink } from 'react-router-dom'
+
 
 
 const AddFoodModal = React.forwardRef((props, ref) => {
