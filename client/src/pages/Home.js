@@ -5,7 +5,6 @@ import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
 import HomeFoodCard from '../components/HomeFoodCard'
 import { NavLink } from 'react-router-dom'
-import Header from '../components/Header'
 import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 
 
