@@ -16,4 +16,5 @@ const FoodCard = ({ result, getSpecificFood}) => {
     )
 }
 
+
 export default FoodCard
