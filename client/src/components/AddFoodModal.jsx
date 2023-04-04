@@ -55,8 +55,8 @@ const AddFoodModal = React.forwardRef((props, ref) => {
         })
 
         let nutrientsArray = []
-        for (let i = 0; i < 8; i++) {
-            const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": name.data.common[i].food_name }, {
+        for (let food of name.data.common) {
+            const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": food.food_name }, {
                 headers: {
                     'Content-Type': 'application/json',
                     'x-app-id': 'bec583d3',
