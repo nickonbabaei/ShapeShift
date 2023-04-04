@@ -255,7 +255,7 @@ const Register = ({ setUser }) => {
                                 <h1
                                     class="mt-6 text-2xl text-center text-sky-600 font-bold text-gray-900 sm:text-3xl md:text-4xl"
                                 >
-                                    Welcome to ShapeShift
+                                    Join The ShapeShift Community
                                 </h1>
 
                                 <p class="mt-4 leading-relaxed text-gray-500">
@@ -368,7 +368,7 @@ const Register = ({ setUser }) => {
                                     <div class="col-span-6 justify-center sm:flex sm:items-center sm:gap-4">
                                         <span class="mt-4 text-sm text-gray-500 sm:mt-0">
                                             Already have an account?
-                                            <NavLink to={'/login'} className="text-gray-700 underline">Sign in</NavLink>
+                                            <NavLink to={'/'} className="text-gray-700 underline">Sign in</NavLink>
                                         </span>
                                     </div>
                                 </form>

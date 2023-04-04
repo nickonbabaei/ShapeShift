@@ -31,7 +31,7 @@ const Login = ({ setUser }) => {
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg">
                 <h1 className="text-center text-2xl font-bold text-sky-600 sm:text-3xl">
-                    Welcome Back!
+                    Welcome To ShapeShift
                 </h1>
 
                 <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
@@ -100,7 +100,7 @@ const Login = ({ setUser }) => {
 
                     <p className="text-center text-sm text-gray-500">
                         No account?
-                        <NavLink className="underline" to={'/'}>Sign up</NavLink>
+                        <NavLink className="underline" to={'/register'}>Sign up</NavLink>
                     </p>
                 </form>
             </div>
