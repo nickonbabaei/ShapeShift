@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import axios from 'axios'
 
-const Register = ({setUser}) => {
+const Register = ({ setUser }) => {
     let navigate = useNavigate()
     const initalState = {
         age: '',
@@ -57,7 +57,7 @@ const Register = ({setUser}) => {
     const handleGoalSubmit = async (e) => {
         e.preventDefault()
         await axios.post(`http://localhost:3001/api/goal/create/${userInfo.id}`, goal)
-        let payload = await SignInUser({email: formValues.email, password: formValues.password})
+        let payload = await SignInUser({ email: formValues.email, password: formValues.password })
         setUser(payload)
         navigate('/')
     }
@@ -73,13 +73,14 @@ const Register = ({setUser}) => {
                     <div class="mx-auto h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
                             <div class="lg:col-span-2 lg:py-12">
-                                <p class="max-w-xl text-lg">
-                                    At the same time, the fact that we are wholly owned and totally
-                                    independent from manufacturer and other group control gives you
-                                    confidence that we will only recommend what is right for you.
+                                <h1 className='text-2xl text-center font-bold'>Lets Get Started!</h1>
+                                <p class="text-center pt-10 text-lg">
+                                    Before we let you in, we need to gather some information about you and your goals.
+                                    Please input your current sex, age, weight and height, as well as your activity level and general goal.
+                                    This will allow us to calculate your daily caloric needs to reach your desired goal
                                 </p>
 
-                                <div class="mt-8">
+                                {/* <div class="mt-8">
                                     <a href="" class="text-2xl font-bold text-pink-600">
                                         0151 475 4450
                                     </a>
@@ -87,7 +88,7 @@ const Register = ({setUser}) => {
                                     <address class="mt-2 not-italic">
                                         282 Kevin Brook, Imogeneborough, CA 58517
                                     </address>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
@@ -97,7 +98,7 @@ const Register = ({setUser}) => {
                                         <div>
                                             <label class="sr-only" for="sex">Sex</label>
                                             <select
-                                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                                 placeholder="Age"
                                                 type="text"
                                                 id="sex"
@@ -112,19 +113,20 @@ const Register = ({setUser}) => {
                                         <div>
                                             <label class="sr-only" for="age">Age</label>
                                             <input
-                                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                                 placeholder="Age"
                                                 type="text"
                                                 id="age"
                                                 onChange={handleGoalChange}
                                                 required
                                             />
+
                                         </div>
 
                                         <div>
                                             <label class="sr-only" for="weight">Weight</label>
                                             <input
-                                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                                 placeholder="Weight (kg)"
                                                 type="text"
                                                 id="weight"
@@ -136,7 +138,7 @@ const Register = ({setUser}) => {
                                         <div>
                                             <label class="sr-only" for="height">Height</label>
                                             <input
-                                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                                 placeholder="Height (cm)"
                                                 type="text"
                                                 id="height"
@@ -148,7 +150,7 @@ const Register = ({setUser}) => {
                                     <div>
                                         <label class="sr-only" for="activity">Activity Level</label>
                                         <select
-                                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                            class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                             placeholder="Activity Level"
                                             type="text"
                                             id="activity"
@@ -180,7 +182,7 @@ const Register = ({setUser}) => {
                                         <div>
                                             <label class="sr-only" for="description">Goal</label>
                                             <select
-                                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                                 placeholder="Email address"
                                                 type="email"
                                                 id="description"
@@ -201,7 +203,7 @@ const Register = ({setUser}) => {
                                     <div class="mt-4">
                                         <button
                                             type="submit"
-                                            class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                                            class="inline-block w-full rounded-lg bg-sky-600 border border-sky-600 px-5 py-3 font-medium text-white hover:bg-white hover:text-sky-600 sm:w-auto"
                                         >
                                             Set Goal
                                         </button>
@@ -235,7 +237,7 @@ const Register = ({setUser}) => {
                             class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
                         >
                             <div class="max-w-xl lg:max-w-3xl">
-                                <a class="block text-blue-600" href="/">
+                                {/* <a class="block text-blue-600" href="/">
                                     <span class="sr-only">Home</span>
                                     <svg
                                         class="h-8 sm:h-10"
@@ -248,24 +250,23 @@ const Register = ({setUser}) => {
                                             fill="currentColor"
                                         />
                                     </svg>
-                                </a>
+                                </a> */}
 
                                 <h1
-                                    class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
+                                    class="mt-6 text-2xl text-center text-sky-600 font-bold text-gray-900 sm:text-3xl md:text-4xl"
                                 >
-                                    Welcome to Squid 🦑
+                                    Welcome to ShapeShift
                                 </h1>
 
                                 <p class="mt-4 leading-relaxed text-gray-500">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
-                                    dolorum aliquam, quibusdam aperiam voluptatum.
+                                    To get started, please register by creating an account with us. Simply enter your email address and create a secure password. Once you're registered, you can start tracking your daily caloric intake and reach your health goals. Let's get started!
                                 </p>
 
                                 <form onSubmit={handleSubmit} class="mt-8 grid grid-rows-5 grid-cols-6 gap-6">
                                     <div class="col-span-6">
                                         <label
                                             for="email"
-                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-sky-600 focus-within:ring-1 focus-within:ring-sky-600"
                                         >
                                             <input
                                                 type="name"
@@ -288,7 +289,7 @@ const Register = ({setUser}) => {
                                     <div class="col-span-6">
                                         <label
                                             for="email"
-                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
                                         >
                                             <input
                                                 type="email"
@@ -311,7 +312,7 @@ const Register = ({setUser}) => {
                                     <div class="col-span-6 sm:col-span-3">
                                         <label
                                             for="password"
-                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
                                         >
                                             <input
                                                 type="password"
@@ -334,7 +335,7 @@ const Register = ({setUser}) => {
                                     <div class="col-span-6 sm:col-span-3">
                                         <label
                                             for="confirmPassword"
-                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+                                            class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
                                         >
                                             <input
                                                 type="password"
@@ -358,7 +359,7 @@ const Register = ({setUser}) => {
 
                                         <button
                                             onClick={handleSubmit}
-                                            class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                                            class="inline-block shrink-0 rounded-md border border-sky-600 bg-sky-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
                                         >
                                             Create an account
                                         </button>
@@ -367,7 +368,7 @@ const Register = ({setUser}) => {
                                     <div class="col-span-6 justify-center sm:flex sm:items-center sm:gap-4">
                                         <span class="mt-4 text-sm text-gray-500 sm:mt-0">
                                             Already have an account?
-                                            <NavLink to={'/'} class="text-gray-700 underline"> Log in</NavLink>.
+                                            <NavLink to={'/login'} className="text-gray-700 underline">Sign in</NavLink>
                                         </span>
                                     </div>
                                 </form>

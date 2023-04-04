@@ -22,7 +22,7 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                         <div>
                             <label class="sr-only" for="sex">Sex</label>
                             <select
-                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                 placeholder="Age"
                                 type="text"
                                 id="sex"
@@ -107,7 +107,7 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                     <div>
                         <label class="sr-only" for="activity">Activity Level</label>
                         <select
-                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                            class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                             placeholder="Activity Level"
                             type="text"
                             id="activity"
@@ -140,7 +140,7 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                         <div>
                             <label class="sr-only" for="description">Goal</label>
                             <select
-                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                 placeholder="Email address"
                                 type="email"
                                 id="description"
@@ -164,16 +164,16 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
 
 
 
-                    <div class="flex justify-center mt-4">
+                    <div class="flex gap-4 justify-center mt-4">
                         <button
                             type="submit"
-                            class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                            class="inline-block w-full rounded-lg bg-black px-5 py-3 bg-sky-600 font-medium text-white transition hover:bg-white hover:text-sky-600 sm:w-auto"
                         >
                             Set Goal
                         </button>
                         <button
                             onClick={toggleOpen}
-                            class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                            class="inline-block w-full rounded-lg bg-black px-5 py-3 bg-sky-600 font-medium text-white transition hover:bg-white hover:text-sky-600 sm:w-auto"
                         >
                             Cancel
                         </button>

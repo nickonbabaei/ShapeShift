@@ -47,9 +47,9 @@ function App() {
           </Routes>
           :
           <Routes>
-            <Route path='/' element={<Login setUser={setUser} />} />
+            <Route path='/login' element={<Login setUser={setUser} />} />
             <Route path='/home' element={<Home handleLogout={handleLogOut}/>} />
-            <Route path='/register' element={<Register setUser={setUser}/>} />
+            <Route path='/' element={<Register setUser={setUser}/>} />
             <Route path='/setgoal' element={<SetGoal user={user} />} />
             <Route path='/goalpage' element={<GoalPage user={user} />} />
           </Routes>

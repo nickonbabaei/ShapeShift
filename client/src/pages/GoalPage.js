@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 // import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import EditGoalForm from '../components/EditGoalForm'
+import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 
 const GoalPage = ({ user, handleLogout }) => {
 
@@ -56,6 +57,7 @@ const GoalPage = ({ user, handleLogout }) => {
     return goalInfo && (
         <section class="bg-sky-200 text-black">
             <Nav handleLogout={handleLogout} />
+            <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{ borderRadius: '8px', width: '28rem', height: '12rem' }} /> </div>
             <div
                 class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
             >
@@ -145,7 +147,7 @@ const GoalPage = ({ user, handleLogout }) => {
                 <div class="mt-12 text-center">
                     <button
                         onClick={toggleOpen}
-                        class="inline-block rounded bg-sky-600 px-12 py-3 text-sm font-medium text-black transition hover:bg-white hover:text-sky-600 focus:outline-none focus:ring focus:ring-yellow-400"
+                        class="inline-block rounded bg-sky-600 px-12 py-3 text-sm font-medium text-black transition hover:bg-white hover:text-sky-600"
                     >
                         Update Info/Goal
                     </button>
