@@ -12,10 +12,6 @@ const Nav = ({handleLogout}) => {
                 <NavLink className="pl-6 block text-sky-600 hover:text-white" to={"/"}>
                     <span className="sr-only">Home</span>
                     <h1>Dashboard</h1>
-                    
-                    
-
-                    
                 </NavLink>
 
                 <div className="flex flex-1 items-center justify-between gap-6">
@@ -25,11 +21,7 @@ const Nav = ({handleLogout}) => {
                                 <NavLink className="text-sky-600 transition hover:text-white" to='goalpage'>
                                     Info/Goal
                                 </NavLink>
-                            </li>
-
-                          
-
-                            
+                            </li>                            
                         </ul>
                     </nav>
 
