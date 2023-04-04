@@ -64,11 +64,28 @@ const GoalPage = ({ user, handleLogout }) => {
                 </div>
 
                 <div class="mt-8 grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
+                <a
+                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition "
+                        href="/services/digital-campaigns"
+                    >
+
+                        <h2 class="mt-4 text-xl font-bold text-black underline">Goal:</h2>
+
+                        <p class="mt-1 text-sm text-black">
+                            {goalInfo.Goal.description === '600' ? 'Dirty bulk (gain weight/muscle with no regards to fat gain)'
+                                : goalInfo.Goal.description === '300' ? 'Lean bulk (gain weight/muscle while putting on minimal fat)'
+                                    : goalInfo.Goal.description === '0' ? 'Maintain your current weight'
+                                        : goalInfo.Goal.description === '-300' ? 'Cut weight (lose weight while losing minimum muscle)'
+                                            : goalInfo.Goal.description === '-600' ? 'Lose weight (lose weight with no regards to muscle loss)'
+                                                : ''
+                            }
+                        </p>
+                    </a>
                     <a
                         class="block rounded-xl border border-gray-800 p-8 shadow-xl transition"
 
                     >
-                        <h2 class="mt-4 text-xl font-bold text-black">Activity Level</h2>
+                        <h2 class="mt-4 text-xl font-bold text-black underline">Activity Level:</h2>
 
                         <p class="mt-1 text-sm text-black">
                             {goalInfo.Goal.activity === '1.2' ? 'Sedentary (little or no exercise)'
@@ -81,26 +98,10 @@ const GoalPage = ({ user, handleLogout }) => {
                         </p>
                     </a>
 
-                    <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition "
-                        href="/services/digital-campaigns"
-                    >
-
-                        <h2 class="mt-4 text-xl font-bold text-black">Body Goal</h2>
-
-                        <p class="mt-1 text-sm text-black">
-                            {goalInfo.Goal.description === '600' ? 'Dirty bulk (gain weight/muscle with no regards to fat gain)'
-                                : goalInfo.Goal.description === '300' ? 'Lean bulk (gain weight/muscle while putting on minimal fat)'
-                                    : goalInfo.Goal.description === '0' ? 'Maintain your current weight'
-                                        : goalInfo.Goal.description === '-300' ? 'Cut weight (lose weight while losing minimum muscle)'
-                                            : goalInfo.Goal.description === '-600' ? 'Lose weight (lose weight with no regards to muscle loss)'
-                                                : ''
-                            }
-                        </p>
-                    </a>
+                    
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition "
+                        class="flex justify-center items-center rounded-xl border border-gray-800 p-8 shadow-xl transition "
                     >
 
                         <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.age} years old</h2>
@@ -111,41 +112,27 @@ const GoalPage = ({ user, handleLogout }) => {
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
+                        class="flex justify-center items-center rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
 
                     >
 
 
                         <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.height} centimeters tall</h2>
-
-                        <p class="mt-1 text-sm text-black">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
-                            possimus adipisci distinctio alias voluptatum blanditiis laudantium.
-                        </p>
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
+                        class="flex justify-center items-center rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
 
                     >
 
                         <h2 class="mt-4 text-xl font-bold text-black">Weighing in at {goalInfo.Goal.weight} kilograms</h2>
 
-                        <p class="mt-1 text-sm text-black">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
-                            possimus adipisci distinctio alias voluptatum blanditiis laudantium.
-                        </p>
                     </a>
 
                     <a
-                        class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
+                        class="flex justify-center items-center rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-3"
                     >
                         <h2 class="mt-4 text-xl font-bold text-black">{goalInfo.Goal.sex.charAt(0).toUpperCase() + goalInfo.Goal.sex.slice(1)}</h2>
-
-                        <p class="mt-1 text-sm text-black">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
-                            possimus adipisci distinctio alias voluptatum blanditiis laudantium.
-                        </p>
                     </a>
                     <a
                         class="block rounded-xl border border-gray-800 p-8 shadow-xl transition  lg:row-start-2 lg:col-start-2"
