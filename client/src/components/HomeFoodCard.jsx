@@ -12,7 +12,6 @@ const HomeFoodCard = ({ food, deleteLog }) => {
                         <p className="text-base text-gray-500 dark:text-gray-400">{food.servingSize} serving, {Math.round(food.calories)} cal, {Math.round(food.protein)}g protein, {Math.round(food.fat)}g fat, {Math.round(food.carbs)}g carb</p>        
                     </li>
                 </NavLink>
-                
             </ul>
         </ol>
     )
