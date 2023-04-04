@@ -1,15 +1,10 @@
 import React from 'react'
-import { useState } from 'react';
-import Box from '@mui/material/Box';
-import axios from 'axios';
 import { Modal } from '@mui/material';
 
 const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalSubmit }) => {
 
 
-
     return (
-
         <Modal
             open={open}
             aria-labelledby="modal-modal-title"
@@ -158,11 +153,7 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
 
                             </select>
                         </div>
-
-
                     </div>
-
-
 
                     <div class="flex gap-4 justify-center mt-4">
                         <button
