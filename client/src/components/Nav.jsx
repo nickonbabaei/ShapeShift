@@ -7,7 +7,7 @@ const Nav = ({handleLogout}) => {
     return (
         <header aria-label="Site Header" className="bg-sky-100">
             <div
-                className="mx-auto flex h-14 max-w-screen items-center gap-8 px-4 sm:pr-6 lg:px-4"
+                className="mx-auto flex h-14 max-w-screen items-center pr-4 gap-8 sm:pr-6 lg:pr-8"
             >
                 <NavLink className="pl-6 block text-sky-600 hover:text-white" to={"/"}>
                     <span className="sr-only">Home</span>
@@ -18,9 +18,9 @@ const Nav = ({handleLogout}) => {
                     
                 </NavLink>
 
-                <div className="flex flex-1 items-center justify-end gap-6">
+                <div className="flex flex-1 items-center justify-between gap-6">
                     <nav aria-label="Site Nav">
-                        <ul className="flex items-center gap-6 text-sm">
+                        <ul className="flex items-center gap-6">
                             <li>
                                 <NavLink className="text-sky-600 transition hover:text-white" to='goalpage'>
                                     Info/Goal

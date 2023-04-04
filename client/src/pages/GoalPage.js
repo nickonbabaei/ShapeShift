@@ -60,7 +60,7 @@ const GoalPage = ({ user, handleLogout }) => {
                 class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
             >
                 <div class="mx-auto max-w-lg text-center pb-6">
-                    <h2 class="text-3xl font-bold sm:text-4xl"> {goalInfo.username.split(' ')[0]}'s Information and Goal</h2>
+                    <h2 class="text-3xl font-bold sm:text-4xl"> {goalInfo.username.split(' ')[0].charAt(0).toUpperCase()+goalInfo.username.slice(1).split(' ')[0]}'s Information and Goal</h2>
                 </div>
 
                 <div class="mt-8 grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
