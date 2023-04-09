@@ -1,10 +1,8 @@
 import * as React from 'react';
 import Nav from './components/Nav'
 import Home from './pages/Home'
-import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register';
-import SetGoal from './pages/SetGoal';
 import GoalPage from './pages/GoalPage';
 import { CheckSession } from './services/Auth';
 import { useState, useEffect } from 'react';
@@ -42,7 +40,6 @@ function App() {
         {user?.email ?
           <Routes>
             <Route path='/' element={<Home user={user} handleLogout={handleLogOut}/>} />
-            <Route path='/setgoal' element={<SetGoal user={user} handleLogout={handleLogOut} />} />
             <Route path='/goalpage' element={<GoalPage user={user} handleLogout={handleLogOut}/>} />
           </Routes>
           :
@@ -50,7 +47,6 @@ function App() {
             <Route path='/' element={<Login setUser={setUser} />} />
             <Route path='/home' element={<Home handleLogout={handleLogOut}/>} />
             <Route path='/register' element={<Register setUser={setUser}/>} />
-            <Route path='/setgoal' element={<SetGoal user={user} />} />
             <Route path='/goalpage' element={<GoalPage user={user} />} />
           </Routes>
 }
