@@ -43,6 +43,7 @@ const updateGoal = async (req, res) => {
     try {
         let goalId = parseInt(req.params.goal_id)
         let age = parseInt(req.body.age)
+        let activity = req.body.activity
         if (req.body.sex === 'male') {
             req.body.calories = Math.round(66.5 + ((13.75*parseInt(req.body.weight)) + (5 * parseInt(req.body.height)) - (6.75*parseInt(req.body.age)))) + parseInt(req.body.description) 
             const calories = req.body.calories
