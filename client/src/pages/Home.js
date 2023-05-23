@@ -65,8 +65,7 @@ const Home = ({ handleLogout, user }) => {
             <button
               class="inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
               onClick={clearLog}
-            >
-              Clear Log
+            >Clear Log
             </button>
           </div>
           <div className='p-4 rounded-lg shadow-xl container bg-slate-100 overflow-auto h-80'>
