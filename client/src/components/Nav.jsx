@@ -7,8 +7,9 @@ const Nav = ({handleLogout}) => {
     return (
         <header aria-label="Site Header" className="bg-sky-100">
             <div
-                className="mx-auto flex h-14 max-w-screen items-center pr-4 gap-8 sm:pr-6 lg:pr-8"
+                className="mx-auto flex h-14 max-w-screen-xl items-center pr-4 gap-8 sm:pr-6 lg:pr-8"
             >
+                
                 <NavLink className="pl-6 block text-sky-600 hover:text-white" to={"/"}>
                     <span className="sr-only">Home</span>
                     <h1>Dashboard</h1>
