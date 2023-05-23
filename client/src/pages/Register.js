@@ -195,8 +195,7 @@ const Register = ({ setUser }) => {
                                         <button
                                             type="submit"
                                             class="inline-block w-full rounded-lg bg-sky-600 border border-sky-600 px-5 py-3 font-medium text-white hover:bg-white hover:text-sky-600 sm:w-auto"
-                                        >
-                                            Set Goal
+                                        >Set Goal
                                         </button>
                                     </div>
                                 </form>
