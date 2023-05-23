@@ -46,7 +46,7 @@ const Home = ({ handleLogout, user }) => {
     <div className='bg-sky-200'>
       <header>
         <Nav handleLogout={handleLogout} />
-        <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{ borderRadius: '8px', width: '28rem', height: '12rem' }} /> </div>
+        <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{ borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px', width: '28rem', height: '12rem' }} /> </div>
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">

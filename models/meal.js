@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Meal.belongsToMany( models.User, { foreignKey: 'mealId', through: models.MealIngredient, onDelete: 'CASCADE', onUpdate: 'CASCADE'})
-      Meal.belongsToMany( models.Ingredient, { foreignKey: 'mealId', through: models.MealIngredient, onDelete: 'CASCADE', onUpdate: 'CASCADE'})
+      // Meal.belongsToMany( models.User, { foreignKey: 'mealId', through: models.MealIngredient, onDelete: 'CASCADE', onUpdate: 'CASCADE'})
+      // Meal.belongsToMany( models.Ingredient, { foreignKey: 'mealId', through: models.MealIngredient, onDelete: 'CASCADE', onUpdate: 'CASCADE'})
       // Meal.hasMany( models.ingredient, { foreignKey: 'ingredientId', onDelete: 'CASCADE', onUpdate: 'CASCADE'}) ASK HOW MEAL AND INGREDIENTS
       // WOULD WORK, IF I WANT TO HAVE AN ARRAY OF INGREDIENTS I WANT TO BE ABLE TO ACCESS IN EACH MEAL. 
     }
