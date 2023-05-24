@@ -51,10 +51,6 @@ const Home = ({ handleLogout, user }) => {
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
-
-          <div className='flex justify-center pb-4'>
-            <h1 className='text-5xl font-bold'>Your Logged Food</h1>
-          </div>
           <div className='flex justify-between'>
             <button
               class="inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
