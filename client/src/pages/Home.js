@@ -43,7 +43,7 @@ const Home = ({ handleLogout, user }) => {
 
 
   return (
-    <div className='bg-sky-200'>
+    <div className='bg-sky-100'>
       <header>
         <Nav handleLogout={handleLogout} />
         <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{ borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px', width: '28rem', height: '12rem' }} /> </div>
