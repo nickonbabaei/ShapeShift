@@ -138,7 +138,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
                             </div>
                             <div>
-                                <button onClick={toggleOpen} className='rounded-b-lg ml-2'> close </button>
+                                <button onClick={toggleOpen} className='rounded-b-lg ml-2 hover:text-red-700'> close </button>
                             </div>
                         </div>
                     }
