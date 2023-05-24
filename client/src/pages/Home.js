@@ -76,7 +76,7 @@ const Home = ({ handleLogout, user }) => {
                 </div>
                 :
                 <div className='flex justify-center'>
-                  <h1 className='font-bold text-3xl pt-2'>Nothing logged! Lets get logging! </h1>
+                  <h1 className='font-bold text-2xl pt-2'>Nothing logged! Lets get logging! </h1>
                 </div>
             }
           </div>
@@ -110,7 +110,7 @@ const Home = ({ handleLogout, user }) => {
               :
               <div className='mt-16 sm:flex-row items-center justify-center sm:justify-between bg-gray-100 pt-1 pr-4 pl-4 pb-4 rounded-lg shadow-md'>
                 <div class="flex justify-center ml-4 mr-4">
-                  <h2 class="text-2xl font-bold justify-center">Total Nutrients Logged</h2>
+                  <h2 class="text-2xl underline font-bold justify-center">Total Nutrients Logged</h2>
                 </div>
                 <div className='flex justify-center pt-10 pb-10'>
                   <h1 className='font-bold'>No nutrients to display!</h1>
