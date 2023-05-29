@@ -37,7 +37,7 @@ const GoalPage = ({ user, handleLogout }) => {
     }, [])
 
     return goalInfo && (
-        <section class="bg-sky-200 text-black">
+        <section class="bg-sky-100 text-black">
             <Nav handleLogout={handleLogout} />
             <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{ borderRadius: '8px', width: '28rem', height: '12rem' }} /> </div>
             <div
