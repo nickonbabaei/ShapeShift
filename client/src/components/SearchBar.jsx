@@ -4,8 +4,8 @@ const SearchBar = ({ handleChange, onSubmit }) => {
 
 
     return (
-        <div className='relative'>
-            <form class='flex border-b-4' onSubmit={onSubmit}>
+        <div className='relative rounded-xl'>
+            <form class='flex' onSubmit={onSubmit}>
                 <input
                     type="text"
                     name='search'
@@ -16,7 +16,7 @@ const SearchBar = ({ handleChange, onSubmit }) => {
                 />
                 <button
                     type="submit"
-                    class="inline-block shrink-0 rounded-md border border-sky-600 bg-sky-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-white hover:text-sky-600 focus:outline-none focus:ring active:text-blue-500"
+                    class="inline-block shrink-0 rounded-md border border-sky-600 bg-sky-600 px-2 sm:px-12 text-sm font-medium text-white transition hover:bg-white hover:text-sky-600 focus:outline-none focus:ring active:text-blue-500"
                 >
                     Search
                 </button>

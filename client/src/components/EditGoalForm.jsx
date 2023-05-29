@@ -10,10 +10,10 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <div class=" mt-[10%] mr-[20%] ml-[20%] rounded-lg bg-white p- shadow-lg lg:col-span-3 lg:p-4">
+            <div class="mt-[60%] mr-[5%] ml-[5%] sm:mt-[10%] sm:mr-[20%] sm:ml-[20%] rounded-xl p-4 bg-white shadow-lg lg:col-span-3 lg:p-4">
                 <form onSubmit={handleGoalSubmit} class="space-y-4">
 
-                    <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-4">
+                    <div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
                         <div>
                             <label class="sr-only" for="sex">Sex</label>
                             <select
@@ -158,13 +158,13 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                     <div class="flex gap-4 justify-center mt-4">
                         <button
                             type="submit"
-                            class="inline-block w-full rounded-lg bg-black px-5 py-3 bg-sky-600 font-medium text-white transition hover:bg-white hover:text-sky-600 sm:w-auto"
+                            class="inline-block w-full rounded-lg bg-black px-2 py-2 bg-sky-600 font-medium text-white transition text-sm hover:bg-white hover:text-sky-600 sm:w-auto sm:px-5 sm:py-3"
                         >
                             Set Goal
                         </button>
                         <button
                             onClick={toggleOpen}
-                            class="inline-block w-full rounded-lg bg-black px-5 py-3 bg-sky-600 font-medium text-white transition hover:bg-white hover:text-sky-600 sm:w-auto"
+                            class="inline-block w-full rounded-lg bg-black px-2 py-2 bg-sky-600 font-medium text-white transition text-sm hover:bg-white hover:text-sky-600 sm:w-auto sm:px-5 sm:py-3"
                         >
                             Cancel
                         </button>

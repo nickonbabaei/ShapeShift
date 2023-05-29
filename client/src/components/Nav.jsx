@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Nav = ({handleLogout}) => {
 
     return (
-        <header aria-label="Site Header" className="bg-sky-100 border-b-2 border-white">
+        <header aria-label="Site Header" className="bg-sky-100 sm:border-b-2 sm:border-white">
             <div
                 className="mx-auto flex h-14 max-w-screen-xl items-center pr-4 gap-8 sm:pr-6 lg:pr-8"
             >

@@ -84,11 +84,11 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
     return (
         <Modal open={open} ref={ref}>
-            <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-lg bg-gray-100">
+            <div class="mt-[45%] mr-[5%] ml-[5%] sm:mx-auto sm:mt-[10%] sm:mr-[20%] sm:ml-[20%] max-w-screen-xl">
+                <div class="rounded-xl mx-auto max-w-lg bg-gray-100">
                     {renderDetails ?
                         <div className='sm:flex-row items-center justify-center sm:justify-between bg-gray-100 pt-1 pr-4 pl-4 pb-4 rounded-md shadow-md'>
-                            <div className='flex justify-between pb-2'>
+                            <div className='rounded-xl flex justify-between pb-2'>
                                 <div><button onClick={toggleDetails} className='font-bold'> back </button></div>
                                 <div><button onClick={toggleOpen} className='text-xl font-bold hover:text-red-500'> x </button></div>
                             </div>
@@ -138,7 +138,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
                             </div>
                             <div>
-                                <button onClick={toggleOpen} className='rounded-b-lg ml-2 hover:text-red-700'> close </button>
+                                <button onClick={toggleOpen} className='rounded-xl ml-2 hover:text-red-700'> close </button>
                             </div>
                         </div>
                     }
