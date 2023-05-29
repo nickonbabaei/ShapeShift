@@ -31,5 +31,4 @@
 - Ability to create your own meals
 - Ability to ask AI specific questions based on issues you're dealing with on your fitness journey
 - Increase variety of nutrients to track
-- Implement USDA Food API for better search results
 
