@@ -40,13 +40,11 @@ const Home = ({ handleLogout, user }) => {
     await axios.delete(`http://localhost:3001/api/ingredient/delete/${food.id}`)
     getUserInfo()
   }
-
-
   return (
     <div className='bg-sky-100'>
       <header>
         <Nav handleLogout={handleLogout} />
-        <div className='flex justify-center'> <img src={ShapeShiftLogo} className="h-64 w-screen rounded-b-lg sm:w-96 sm:h-48" /> </div>
+        <div className='flex justify-center'> <img src={ShapeShiftLogo} className="h-64 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
