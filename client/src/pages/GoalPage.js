@@ -37,33 +37,36 @@ const GoalPage = ({ user, handleLogout }) => {
     }, [])
 
     return goalInfo && (
-        <section class="bg-sky-100 text-black h-screen">
+        <div class="bg-sky-100 text-black h-screen">
             <Nav handleLogout={handleLogout} />
-            <div className='flex justify-center'> <img src={ShapeShiftLogo} style={{ borderRadius: '8px', width: '28rem', height: '12rem' }} /> </div>
-            <div class="mx-auto max-w-lg text-center">
-                <h2 class="text-2xl font-bold sm:text-4xl"> {goalInfo.username.split(' ')[0].charAt(0).toUpperCase() + goalInfo.username.slice(1).split(' ')[0]}'s Information and Goal</h2>
-            </div>
-            <div className='mx-auto max-w-screen-sm w-5/6 flex flex-col border-2 border-black bg-white px-4 shadow-lg'>
-                <div className='flex justify-between border-b-2 py-2'>
-                    <h2 class="text-md font-semibold text-black">Age:</h2>
-                    <h2 class="text-md text-black">{goalInfo.Goal.age}</h2>
+            <div className='flex justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
+            <div className='mx-auto px-4'>
+
+
+                <div class="mx-auto max-w-lg text-center py-6">
+                    <h2 class="text-2xl font-bold sm:text-4xl"> {goalInfo.username.split(' ')[0].charAt(0).toUpperCase() + goalInfo.username.slice(1).split(' ')[0]}'s Information and Goal</h2>
                 </div>
-                <div className='flex justify-between border-b-2 py-2'>
-                    <h2 class="text-md font-semibold text-black">Height:</h2>
-                    <h2 class="text-md text-black">{goalInfo.Goal.height}</h2>
-                </div>
-                <div className='flex justify-between border-b-2 py-2'>
-                    <h2 class="text-md font-semibold text-black">Weight:</h2>
-                    <h2 class="text-md text-black">{goalInfo.Goal.weight}</h2>
-                </div>
-                <div className='flex justify-between border-b-2 py-2'>
-                    <h2 class="text-md font-semibold text-black">Sex:</h2>
-                    <h2 class="text-md text-black">{goalInfo.Goal.sex.charAt(0).toUpperCase() + goalInfo.Goal.sex.slice(1)}</h2>
-                </div>
-                <div className='justify-between border-b-2 py-2 sm:flex'>
-                    <h2 class="text-md font-semibold text-black">Activity Level:</h2>
-                    <p class="mt-1 text-sm text-black">
-                            {goalInfo.Goal.activity === '1.2' ? 'Sedentary (little or no exercise)'
+                <div className='mx-auto max-w-screen-sm w-full flex flex-col bg-white px-4 shadow-lg rounded-md'>
+                    <div className='flex justify-between border-b-2 py-2'>
+                        <h2 class="text-md font-semibold text-black">Age:</h2>
+                        <h2 class="text-md text-black">{goalInfo.Goal.age}</h2>
+                    </div>
+                    <div className='flex justify-between border-b-2 py-2'>
+                        <h2 class="text-md font-semibold text-black">Height:</h2>
+                        <h2 class="text-md text-black">{goalInfo.Goal.height} cm</h2>
+                    </div>
+                    <div className='flex justify-between border-b-2 py-2'>
+                        <h2 class="text-md font-semibold text-black">Weight:</h2>
+                        <h2 class="text-md text-black">{goalInfo.Goal.weight} kg</h2>
+                    </div>
+                    <div className='flex justify-between border-b-2 py-2'>
+                        <h2 class="text-md font-semibold text-black">Sex:</h2>
+                        <h2 class="text-md text-black">{goalInfo.Goal.sex.charAt(0).toUpperCase() + goalInfo.Goal.sex.slice(1)}</h2>
+                    </div>
+                    <div className='justify-between border-b-2 py-2 sm:flex'>
+                        <h2 class="text-md font-semibold text-black">Activity Level:</h2>
+                        <p class="mt-1 text-sm text-black">
+                            {goalInfo.Goal.activity === '1.2' ? 'Sedentary (little to no exercise)'
                                 : goalInfo.Goal.activity === '1.375' ? 'Lightly active (light exercise/sports 1-3 days/week)'
                                     : goalInfo.Goal.activity === '1.55' ? 'Moderately active (moderate exercise/sports 3-5 days/week)'
                                         : goalInfo.Goal.activity === '1.725' ? 'Very active (hard exercise/sports 6-7 days a week)'
@@ -71,10 +74,10 @@ const GoalPage = ({ user, handleLogout }) => {
                                                 : ''
                             }
                         </p>
-                </div>
-                <div className='justify-between py-2 sm:flex'>
-                    <h2 class="text-md font-semibold text-black">Goal:</h2>
-                    <p class="mt-1 text-sm text-black">
+                    </div>
+                    <div className='justify-between py-2 sm:flex'>
+                        <h2 class="text-md font-semibold text-black">Goal:</h2>
+                        <p class="mt-1 text-sm text-black">
                             {goalInfo.Goal.description === '600' ? 'Dirty bulk (gain weight/muscle with no regards to fat gain)'
                                 : goalInfo.Goal.description === '300' ? 'Lean bulk (gain weight/muscle while putting on minimal fat)'
                                     : goalInfo.Goal.description === '0' ? 'Maintain your current weight'
@@ -83,11 +86,23 @@ const GoalPage = ({ user, handleLogout }) => {
                                                 : ''
                             }
                         </p>
+                    </div>
                 </div>
-                
+                <div className='mx-auto text-center max-w-screen-sm w-full bg-white px-4 py-2 mt-8 shadow-lg rounded-md'>
+                    <h2 class="text-xl font-bold text-black">You need {goalInfo.Goal.calories} calories per day</h2>
 
 
+                </div>
+            </div>
 
+
+            <div class="mt-12 text-center">
+                <button
+                    onClick={toggleOpen}
+                    class="inline-block rounded bg-sky-600 px-12 py-3 text-sm font-medium text-black transition hover:bg-white hover:text-sky-600"
+                >
+                    Update Info/Goal
+                </button>
             </div>
             {/* <div
                 class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
@@ -184,7 +199,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
 
 
-        </section>
+        </div>
 
     )
 }
