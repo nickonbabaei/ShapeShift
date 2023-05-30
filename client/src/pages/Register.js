@@ -195,7 +195,8 @@ const Register = ({ setUser }) => {
                                         <button
                                             type="submit"
                                             class="inline-block w-full rounded-lg bg-sky-600 border border-sky-600 px-5 py-3 font-medium text-white hover:bg-white hover:text-sky-600 sm:w-auto"
-                                        >Set Goal
+                                        >
+                                            Set Goal
                                         </button>
                                     </div>
                                 </form>
@@ -331,17 +332,17 @@ const Register = ({ setUser }) => {
                                         </label>
                                     </div>
 
-                                    <div class="col-span-6 justify-center sm:flex sm:items-center sm:gap-4">
+                                    <div class="col-start-2 col-end-6 justify-center sm:flex sm:items-center sm:gap-4">
 
                                         <button
                                             onClick={handleSubmit}
-                                            class="inline-block shrink-0 rounded-md border border-sky-600 bg-sky-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
+                                            class="inline-block shrink-0 rounded-md border border-sky-600 bg-sky-600 px-10 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
                                         >
                                             Create an account
                                         </button>
 
                                     </div>
-                                    <div class="col-span-6 justify-center sm:flex sm:items-center sm:gap-4">
+                                    <div class="col-start-2 col-end-6 justify-center sm:flex sm:items-center sm:gap-4">
                                         <span class="mt-4 text-sm text-gray-500 sm:mt-0">
                                             Already have an account?
                                             <NavLink to={'/'} className="text-gray-700 underline">Sign in</NavLink>
