@@ -11,8 +11,8 @@ import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 const Home = ({ handleLogout, user }) => {
 
   let [open, setOpen] = useState(false)
-  const [selectedFood, setSelectedFood] = useState([])
-  const [logged, setLogged] = useState(null)
+  // const [selectedFood, setSelectedFood] = useState([])
+  // const [logged, setLogged] = useState(null)
   const [userInfo, setUserInfo] = useState(null)
 
   const getUserInfo = async () => {

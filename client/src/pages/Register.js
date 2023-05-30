@@ -48,8 +48,6 @@ const Register = ({ setUser }) => {
         }
     }
 
-
-
     const handleGoalChange = (e) => {
         setGoal({ ...goal, [e.target.id]: e.target.value })
     }
@@ -82,7 +80,7 @@ const Register = ({ setUser }) => {
 
                             </div>
 
-                            <div class="rounded-lg bg-white p-8 shadow-xl lg:col-span-3 lg:p-12">
+                            <div class="pb-2 rounded-lg bg-white p-8 shadow-xl lg:col-span-3 lg:p-12">
                                 <form onSubmit={handleGoalSubmit} class="space-y-4">
 
                                     <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-4">
@@ -204,12 +202,6 @@ const Register = ({ setUser }) => {
                         </div>
                     </div>
                 </section >
-
-
-
-
-
-
                 :
                 <section class="bg-white">
                     <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
