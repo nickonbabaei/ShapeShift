@@ -85,7 +85,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     return (
         <Modal open={open} ref={ref}>
             <div class="mt-[45%] mr-[5%] ml-[5%] sm:mx-auto sm:mt-[10%] sm:mr-[20%] sm:ml-[20%] max-w-screen-xl">
-                <div class="rounded-xl mx-auto max-w-lg bg-gray-100">
+                <div class="rounded-lg mx-auto max-w-lg bg-gray-100">
                     {renderDetails ?
                         <div className='sm:flex-row items-center justify-center sm:justify-between bg-gray-100 pt-1 pr-4 pl-4 pb-4 rounded-md shadow-md'>
                             <div className='rounded-xl flex justify-between pb-2'>
@@ -96,20 +96,20 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <h2 class="text-2xl font-bold justify-center">Nutrition Information for {foodDetails.food_name}</h2>
                                 <h5 >(1 serving = {foodDetails.serving_qty} {foodDetails.serving_unit} or {foodDetails.serving_weight_grams} g)</h5>
                             </div>
-                            <div class="flex justify-center sm:justify-center mr-4 pt-4 sm:mt-0">
-                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4 sm:mt-0">
+                            <div class="pl-4 grid grid-cols-2 md:flex md:justify-center md:mr-4 md:pt-4">
+                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
                                     <p class="text-lg font-semibold underline">Calories</p>
                                     <p id="calories" class="text-lg font-bold">{Math.round(foodDetails.nf_calories * 10) / 10}</p>
                                 </div>
-                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4 sm:mt-0">
+                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
                                     <p class="text-lg font-semibold underline">Protein</p>
                                     <p id="protein" class="text-lg font-bold">{Math.round(foodDetails.nf_protein * 10) / 10}g</p>
                                 </div>
-                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4 sm:mt-0">
+                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
                                     <p class="text-lg font-semibold underline">Carbs</p>
                                     <p id="carbs" class="text-lg font-bold">{Math.round(foodDetails.nf_total_carbohydrate * 10) / 10}g</p>
                                 </div>
-                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mt-4 sm:mt-0">
+                                <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mt-4 mr-4">
                                     <p class="text-lg font-semibold underline">Fat</p>
                                     <p id="fat" class="text-lg font-bold">{Math.round(foodDetails.nf_total_fat * 10) / 10}g</p>
                                 </div>
@@ -138,7 +138,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
                             </div>
                             <div>
-                                <button onClick={toggleOpen} className='rounded-xl ml-2 hover:text-red-700'> close </button>
+                                <button onClick={toggleOpen} className='ml-2 hover:text-red-700'> close </button>
                             </div>
                         </div>
                     }

@@ -10,7 +10,7 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <div class="mt-[60%] mr-[5%] ml-[5%] sm:mt-[10%] sm:mr-[20%] sm:ml-[20%] rounded-xl p-4 bg-white shadow-lg lg:col-span-3 lg:p-4">
+            <div class="mt-[60%] mr-[5%] ml-[5%] sm:mt-[10%] sm:mr-[20%] sm:ml-[20%] rounded-lg p-4 bg-white shadow-lg lg:col-span-3 lg:p-4">
                 <form onSubmit={handleGoalSubmit} class="space-y-4">
 
                     <div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
