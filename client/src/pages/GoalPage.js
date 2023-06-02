@@ -96,7 +96,7 @@ const GoalPage = ({ user, handleLogout }) => {
             </div>
 
 
-            <div class="mt-12 text-center">
+            <div class="mt-6 text-center">
                 <button
                     onClick={toggleOpen}
                     class="inline-block rounded bg-sky-600 px-12 py-3 text-sm font-medium text-black transition hover:bg-white hover:text-sky-600"

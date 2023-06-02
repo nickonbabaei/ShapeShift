@@ -89,7 +89,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                     {renderDetails ?
                         <div className='sm:flex-row items-center justify-center sm:justify-between bg-gray-100 pt-1 pr-4 pl-4 pb-4 rounded-md shadow-md'>
                             <div className='rounded-xl flex justify-between pb-2'>
-                                <div><button onClick={toggleDetails} className='font-bold'> back </button></div>
+                                <div><button onClick={toggleDetails} className='font-bold pt-1'> back </button></div>
                                 <div><button onClick={toggleOpen} className='text-xl font-bold hover:text-red-500'> x </button></div>
                             </div>
                             <div class="flex-col ml-4 mr-4 sm:justify-start">
