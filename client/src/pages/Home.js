@@ -74,7 +74,7 @@ const Home = ({ handleLogout, user }) => {
                 </div>
                 :
                 <div className='flex justify-center'>
-                  <h1 className='font-bold text-2xl pt-2'>Nothing logged! Lets get logging! </h1>
+                  <h1 className='font-bold text-2xl pt-2'>Logged food displays here!</h1>
                 </div>
             }
           </div>

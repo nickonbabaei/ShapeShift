@@ -4,7 +4,7 @@ import { SignInUser } from '../services/Auth'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 
-const Login = ({ setUser }) => {
+const Login = ({ setUser, updateUser }) => {
 
     const [formValues, setFormValues] = useState({ email: '', password: '' })
 
@@ -24,6 +24,8 @@ const Login = ({ setUser }) => {
         setUser(payload)
         navigate('/')
     }
+
+    
 
     return (
 
