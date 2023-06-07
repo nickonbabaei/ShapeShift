@@ -51,9 +51,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     const getSearchResults = async (e) => {
         e.preventDefault()
         setSearchResults(null)
-        const name = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${searched}&dataType=&pageSize=&api_key=${process.env.REACT_APP_USDA_KEY}`, {
-    
-        })
+        const name = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query="${searched}"&dataType=&pageSize=&api_key=${process.env.REACT_APP_USDA_KEY}`)
         setSearchResults(name.data.foods)
     }
 
@@ -93,8 +91,8 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <div><button onClick={toggleOpen} className='text-xl font-bold hover:text-red-500'> x </button></div>
                             </div>
                             <div class="flex-col ml-4 mr-4 sm:justify-start">
-                                <h2 class="text-2xl font-bold justify-center">Nutrition Information for {foodDetails.description}</h2>
-                                <h5 >(1 serving = {foodDetails.serving_qty} {foodDetails.serving_unit} or {foodDetails.serving_weight_grams} g)</h5>
+                                <h2 class="text-2xl font-bold justify-center">{foodDetails.description}</h2>
+                                <h5>{foodDetails.foodMeasures.length > 0 ? <h5> (1 serving = {foodDetails.foodMeasures[0].gramWeight} g)</h5> : <h5>(serving size not available) </h5>}</h5>
                             </div>
                             <div class="pl-4 grid grid-cols-2 md:flex md:justify-center md:mr-4 md:pt-4">
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
