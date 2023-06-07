@@ -93,25 +93,25 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <div><button onClick={toggleOpen} className='text-xl font-bold hover:text-red-500'> x </button></div>
                             </div>
                             <div class="flex-col ml-4 mr-4 sm:justify-start">
-                                <h2 class="text-2xl font-bold justify-center">Nutrition Information for {foodDetails.food_name}</h2>
+                                <h2 class="text-2xl font-bold justify-center">Nutrition Information for {foodDetails.description}</h2>
                                 <h5 >(1 serving = {foodDetails.serving_qty} {foodDetails.serving_unit} or {foodDetails.serving_weight_grams} g)</h5>
                             </div>
                             <div class="pl-4 grid grid-cols-2 md:flex md:justify-center md:mr-4 md:pt-4">
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
                                     <p class="text-lg font-semibold underline">Calories</p>
-                                    <p id="calories" class="text-lg font-bold">{Math.round(foodDetails.nf_calories * 10) / 10}</p>
+                                    <p id="calories" class="text-lg font-bold">{Math.round(foodDetails.foodNutrients[3].value * 10) / 10}</p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
                                     <p class="text-lg font-semibold underline">Protein</p>
-                                    <p id="protein" class="text-lg font-bold">{Math.round(foodDetails.nf_protein * 10) / 10}g</p>
+                                    <p id="protein" class="text-lg font-bold">{Math.round(foodDetails.foodNutrients[0].value * 10) / 10}g</p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 mt-4">
                                     <p class="text-lg font-semibold underline">Carbs</p>
-                                    <p id="carbs" class="text-lg font-bold">{Math.round(foodDetails.nf_total_carbohydrate * 10) / 10}g</p>
+                                    <p id="carbs" class="text-lg font-bold">{Math.round(foodDetails.foodNutrients[2].value * 10) / 10}g</p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mt-4 mr-4">
                                     <p class="text-lg font-semibold underline">Fat</p>
-                                    <p id="fat" class="text-lg font-bold">{Math.round(foodDetails.nf_total_fat * 10) / 10}g</p>
+                                    <p id="fat" class="text-lg font-bold">{Math.round(foodDetails.foodNutrients[1].value * 10) / 10}g</p>
                                 </div>
                             </div>
                             <div class="mt-4 items-center flex justify-center">
