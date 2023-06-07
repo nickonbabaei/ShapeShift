@@ -130,6 +130,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                             <div className='container overflow-auto h-60'>
                                 {searchResults &&
                                     searchResults.map((result) => (
+                                        result?.foodNutrients[3]?.value &&
                                         <FoodCard result={result} getSpecificFood={getSpecificFood} />
                                     ))
                                 }
