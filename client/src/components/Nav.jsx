@@ -8,7 +8,7 @@ const Nav = ({ handleLogout }) => {
     return (
         <header aria-label="Site Header" className="bg-sky-200 sm:border-b-2 sm:border-white">
             <div
-                className="sm:mx-auto flex h-14 max-w-screen-xl justify-between items-center px-2 sm:gap-8 sm:pr-6 lg:pr-8"
+                className="sm:mx-auto flex h-14 max-w-screen-xl justify-between items-center pl-2 sm:gap-8 sm:pr-6 lg:pr-8"
             >
                 <div className="sm:hidden">
                     <button
@@ -30,11 +30,11 @@ const Nav = ({ handleLogout }) => {
                         </svg>
                     </button>
                 </div>
-                <div className='sm:hidden'>
+                <div className='sm:hidden pl-2'>
                     <h2>Dashboard</h2>
                 </div>
                 <div className='sm:hidden'>
-                    <img src={Logo}/>
+                    <img src={Logo} className='w-5/6'/>
                 </div>
 
                 <NavLink className="hidden sm:block pl-6 text-sky-600 hover:text-white" to={"/"}>
