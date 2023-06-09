@@ -41,7 +41,7 @@ const Home = ({ handleLogout, user }) => {
     getUserInfo()
   }
   return (
-    <div className='bg-sky-100'>
+    <div className='bg-sky-200'>
       <header>
         <Nav handleLogout={handleLogout} />
         <div className='flex justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
