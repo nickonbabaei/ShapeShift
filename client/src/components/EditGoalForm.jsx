@@ -160,7 +160,7 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                             type="submit"
                             class="inline-block w-full rounded-lg bg-black px-2 py-2 bg-sky-600 font-medium text-white transition text-sm hover:bg-white hover:text-sky-600 sm:w-auto sm:px-5 sm:py-3"
                         >
-                            Set Goal
+                            Confirm
                         </button>
                         <button
                             onClick={toggleOpen}
