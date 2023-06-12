@@ -99,7 +99,11 @@ const Home = ({ handleLogout, user }) => {
             }
 
           </div>
-          <div className='p-4 mt-4 rounded-md shadow-xl container bg-white overflow-auto h-80'>
+          <div className='px-4 pb-4 mt-4 rounded-md shadow-xl container bg-white overflow-auto h-80'>
+            <div className='flex justify-center'>
+            <button className='sm:hidden border-2 border-gray-800 px-1 rounded-lg font-semibold mt-2' onClick={clearLog}>clear log</button>
+            </div>
+            
             {
               userInfo && userInfo.Ingredients.length > 0 ?
                 <div>

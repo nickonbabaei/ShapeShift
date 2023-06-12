@@ -70,7 +70,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
             'protein': foodDetails.foodNutrients[0].value,
             'carbs': foodDetails.foodNutrients[2].value,
             'fat': foodDetails.foodNutrients[1].value,
-            'servingInfo': `(1 serving = ${foodDetails.foodMeasures[0].gramWeight} g)`,
             'servingSize': 1
         })
         setFoodDetails(null)
