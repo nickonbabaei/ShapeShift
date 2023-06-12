@@ -11,6 +11,7 @@ const GoalPage = ({ user, handleLogout }) => {
     const toggleOpen = () => setOpen(!open);
     const [goalInfo, setGoalInfo] = useState()
     const [editGoal, setEditGoal] = useState()
+    const [page, setPage] = useState('Info')
 
     const handleGoalChange = (e) => {
         setEditGoal({ ...editGoal, [e.target.id]: e.target.value })
@@ -38,7 +39,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
     return goalInfo && (
         <div class="bg-sky-100 text-black h-screen">
-            <Nav handleLogout={handleLogout} />
+            <Nav handleLogout={handleLogout} page={page} />
             <div className='flex justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
             <div className='mx-auto px-4'>
 

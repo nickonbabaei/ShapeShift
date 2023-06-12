@@ -14,6 +14,7 @@ const Home = ({ handleLogout, user }) => {
   // const [selectedFood, setSelectedFood] = useState([])
   // const [logged, setLogged] = useState(null)
   const [userInfo, setUserInfo] = useState(null)
+  const [page, setPage] = useState('Dashboard')
 
   const getUserInfo = async () => {
     const response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
@@ -43,7 +44,7 @@ const Home = ({ handleLogout, user }) => {
   return (
     <div className='min-h-screen h-full bg-sky-200'>
       <header>
-        <Nav handleLogout={handleLogout} />
+        <Nav handleLogout={handleLogout} page={page}/>
         <div className='hidden sm:flex sm:justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
@@ -101,7 +102,7 @@ const Home = ({ handleLogout, user }) => {
           </div>
           <div className='px-4 pb-4 mt-4 rounded-md shadow-xl container bg-white overflow-auto h-80'>
             <div className='flex justify-center'>
-            <button className='sm:hidden border-2 border-gray-800 px-1 rounded-lg font-semibold mt-2' onClick={clearLog}>clear log</button>
+            <button className='sm:hidden border border-gray-800 px-1 rounded-lg mt-2' onClick={clearLog}>clear log</button>
             </div>
             
             {

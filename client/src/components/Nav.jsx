@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../images/logo.png'
 
 
-const Nav = ({ handleLogout }) => {
+const Nav = ({ handleLogout, page }) => {
     const [open, setOpen] = useState(false)
 
     const handleDropDown = () => {
@@ -16,7 +16,7 @@ const Nav = ({ handleLogout }) => {
             <div
                 className="sm:mx-auto flex h-14 max-w-screen-xl justify-between items-center pl-2 sm:gap-8 sm:pr-6 lg:pr-8"
             >
-                <div className="sm:hidden dropdown">
+                <div className="sm:hidden">
                     <button
                         onClick={handleDropDown}
                         className="rounded bg-sky-200 p-2 text-gray-600 transition hover:text-gray-600"
@@ -39,17 +39,16 @@ const Nav = ({ handleLogout }) => {
 
                     <div
                         id="dropdown"
-                        className={`flex flex-col absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 p-2 focus:shadow ${open ? "block" : "hidden"
+                        className={`flex flex-col absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 p-2 ${open ? "block" : "hidden"
                             }`}
                     >
-                        <NavLink to='/'>Dashboard</NavLink>
-                        <NavLink to='goalpage'>Info</NavLink>
-                        <NavLink onClick={handleLogout} to={"/"}>Sign Out</NavLink>
+                        <NavLink to='/' className='py-2'>Dashboard</NavLink>
+                        <NavLink to='goalpage' className='py-2'>Info</NavLink>
+                        <NavLink onClick={handleLogout} to="/" className='py-2'>Sign Out</NavLink>
                     </div>
-
                 </div>
                 <div className='sm:hidden pl-2'>
-                    <h2>Dashboard</h2>
+                    <h2>{page}</h2>
                 </div>
                 <div className='sm:hidden'>
                     <img src={Logo} className='w-5/6' />
