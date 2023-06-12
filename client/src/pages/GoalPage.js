@@ -101,7 +101,7 @@ const GoalPage = ({ user, handleLogout }) => {
                     onClick={toggleOpen}
                     class="inline-block rounded bg-sky-600 px-12 py-3 text-sm font-medium text-black transition hover:bg-white hover:text-sky-600"
                 >
-                    Update Info/Goal
+                    Update
                 </button>
             </div>
             {/* <div

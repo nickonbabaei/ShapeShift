@@ -42,17 +42,9 @@ const Nav = ({ handleLogout }) => {
                         className={`flex flex-col absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 p-2 focus:shadow ${open ? "block" : "hidden"
                             }`}
                     >
+                        <NavLink to='/'>Dashboard</NavLink>
                         <NavLink to='goalpage'>Info</NavLink>
                         <NavLink onClick={handleLogout} to={"/"}>Sign Out</NavLink>
-                     
-                        {/* <ul className=" z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow ">
-                            <li
-                            >
-                                <a href="#" className="block py-2 px-4 hover:bg-gray-100">
-                                    blablabla
-                                </a>
-                            </li>
-                        </ul> */}
                     </div>
 
                 </div>
@@ -63,7 +55,7 @@ const Nav = ({ handleLogout }) => {
                     <img src={Logo} className='w-5/6' />
                 </div>
 
-                <NavLink className="hidden sm:block pl-6 text-sky-600 hover:text-white" to={"/"}>
+                <NavLink className="hidden sm:block pl-6 text-sky-600 hover:text-white" to="/">
                     <h1>Dashboard</h1>
                 </NavLink>
 
@@ -83,7 +75,7 @@ const Nav = ({ handleLogout }) => {
                             <NavLink
                                 className="block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-sky-600"
                                 onClick={handleLogout}
-                                to={"/"}
+                                to="/"
                             >
                                 Sign Out
                             </NavLink>

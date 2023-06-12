@@ -65,12 +65,12 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
         await axios.post('http://localhost:3001/api/ingredient/create', {
             'userId': user.id,
-            'name': foodDetails.food_name,
-            'calories': foodDetails.nf_calories,
-            'protein': foodDetails.nf_protein,
-            'carbs': foodDetails.nf_total_carbohydrate,
-            'fat': foodDetails.nf_total_fat,
-            'servingInfo': `(1 serving = ${foodDetails.serving_qty} ${foodDetails.serving_unit} or ${foodDetails.serving_weight_grams} g)`,
+            'name': foodDetails.description,
+            'calories': foodDetails.foodNutrients[3].value,
+            'protein': foodDetails.foodNutrients[0].value,
+            'carbs': foodDetails.foodNutrients[2].value,
+            'fat': foodDetails.foodNutrients[1].value,
+            'servingInfo': `(1 serving = ${foodDetails.foodMeasures[0].gramWeight} g)`,
             'servingSize': 1
         })
         setFoodDetails(null)

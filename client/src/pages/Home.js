@@ -60,22 +60,40 @@ const Home = ({ handleLogout, user }) => {
             {
               userInfo && userInfo.Ingredients.length > 0 ?
 
-                <div class="flex justify-center sm:justify-center pt-4 sm:mt-0">
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
-                    <p class="text-lg font-semibold underline">Calories</p>
-                    <p id="calories" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)}</p>
+                // <div class="flex justify-center sm:justify-center pt-4 sm:mt-0">
+                //   <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
+                //     <p class="text-lg font-semibold underline">Calories</p>
+                //     <p id="calories" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)}</p>
+                //   </div>
+                //   <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
+                //     <p class="text-lg font-semibold underline">Protein</p>
+                //     <p id="protein" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.protein)).reduce((acc, curr) => acc + curr, 0)}g</p>
+                //   </div>
+                //   <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
+                //     <p class="text-lg font-semibold underline">Carbs</p>
+                //     <p id="carbs" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.carbs)).reduce((acc, curr) => acc + curr, 0)}g</p>
+                //   </div>
+                //   <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md sm:mt-0">
+                //     <p class="text-lg font-semibold underline">Fat</p>
+                //     <p id="fat" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.fat)).reduce((acc, curr) => acc + curr, 0)}g</p>
+                //   </div>
+                // </div>
+                <div class="flex justify-between pt-2 sm:mt-0 sm:px-8 rounded-b-md">
+                  <div class="flex flex-col items-center justify-center px-4 pb-1 bg-white rounded-b-md sm:mt-0">
+                    <p class="text-lg">Cal</p>
+                    <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)}</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
-                    <p class="text-lg font-semibold underline">Protein</p>
-                    <p id="protein" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.protein)).reduce((acc, curr) => acc + curr, 0)}g</p>
+                  <div class="flex flex-col items-center justify-center px-4 pb-1  bg-white sm:mt-0">
+                    <p class="text-lg">Protein</p>
+                    <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.protein)).reduce((acc, curr) => acc + curr, 0)}g</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
-                    <p class="text-lg font-semibold underline">Carbs</p>
-                    <p id="carbs" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.carbs)).reduce((acc, curr) => acc + curr, 0)}g</p>
+                  <div class="flex flex-col items-center justify-center px-4 pb-1 bg-white sm:mt-0">
+                    <p class="text-lg">Carb</p>
+                    <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.carbs)).reduce((acc, curr) => acc + curr, 0)}g</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md sm:mt-0">
-                    <p class="text-lg font-semibold underline">Fat</p>
-                    <p id="fat" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.fat)).reduce((acc, curr) => acc + curr, 0)}g</p>
+                  <div class="flex flex-col items-center justify-center px-4 pb-1 rounded-b-md bg-white sm:mt-0">
+                    <p class="text-lg">Fat</p>
+                    <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.fat)).reduce((acc, curr) => acc + curr, 0)}g</p>
                   </div>
                 </div>
                 :
