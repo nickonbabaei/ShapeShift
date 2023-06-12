@@ -39,17 +39,20 @@ const Nav = ({ handleLogout }) => {
 
                     <div
                         id="dropdown"
-                        className={`absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 focus:shadow ${open ? "block" : "hidden"
+                        className={`flex flex-col absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 p-2 focus:shadow ${open ? "block" : "hidden"
                             }`}
                     >
-                        <ul className=" z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow ">
+                        <NavLink to='goalpage'>Info</NavLink>
+                        <NavLink onClick={handleLogout} to={"/"}>Sign Out</NavLink>
+                     
+                        {/* <ul className=" z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow ">
                             <li
                             >
                                 <a href="#" className="block py-2 px-4 hover:bg-gray-100">
                                     blablabla
                                 </a>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
 
                 </div>
