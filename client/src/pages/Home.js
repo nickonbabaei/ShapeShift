@@ -100,21 +100,7 @@ const Home = ({ handleLogout, user }) => {
 
             }
           </div>
-
-          <div className='flex justify-between'>
-            <button
-              class="inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
-              onClick={toggleOpen}
-            >
-              Add Food
-            </button>
-            <button
-              class="inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
-              onClick={clearLog}
-            >Clear Log
-            </button>
-          </div>
-          <div className='p-4 rounded-md shadow-xl container bg-slate-100 overflow-auto h-80'>
+          <div className='p-4 mt-4 rounded-md shadow-xl container bg-slate-100 overflow-auto h-80'>
             {
               userInfo && userInfo.Ingredients.length > 0 ?
                 <div>
@@ -129,6 +115,29 @@ const Home = ({ handleLogout, user }) => {
                   <h1 className='font-bold text-2xl pt-2'>Logged food displays here!</h1>
                 </div>
             }
+          </div>
+          <div className='flex justify-center sm:justify-between'>
+            <button
+              class="hidden sm:inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
+              onClick={toggleOpen}
+            >
+              Add Food
+            </button>
+            <button
+              class="hidden sm:inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
+              onClick={clearLog}
+            >Clear Log
+            </button>
+            <button
+              class='sm:hidden mt-4'
+              onClick={toggleOpen}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+
+
+            </button>
           </div>
 
           {/* {
