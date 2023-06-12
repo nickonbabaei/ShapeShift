@@ -18,6 +18,7 @@ const Home = ({ handleLogout, user }) => {
 
   const getUserInfo = async () => {
     const response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
+    console.log(response.data)
     setUserInfo(response.data)
   }
 
@@ -44,7 +45,7 @@ const Home = ({ handleLogout, user }) => {
   return (
     <div className='min-h-screen h-full bg-sky-200'>
       <header>
-        <Nav handleLogout={handleLogout} page={page}/>
+        <Nav handleLogout={handleLogout} page={page} />
         <div className='hidden sm:flex sm:justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
@@ -52,7 +53,16 @@ const Home = ({ handleLogout, user }) => {
         <div class="mx-auto max-w-lg">
           <div className='flex flex-col items-center justify-center bg-white py-1 rounded-md shadow-md'>
             <p className='text-gray-400 text-sm'>Calories left</p>
-            <h1 className='text-black text-4xl font-semibold'>1400 <span className='font-light'>cal</span></h1>
+            {userInfo && userInfo.Ingredients.length > 0 ?
+              <h1 className='text-black text-4xl font-semibold'>
+                {userInfo.Goal.calories - userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)} <span className='font-light'>cal</span>
+              </h1>
+              :
+              <h1 className='text-black text-4xl font-semibold'>
+                {userInfo.Goal.calories} <span className='font-light'>cal</span>
+              </h1>
+            }
+
           </div>
           <div className='mt-4 sm:flex-row items-center justify-center sm:justify-between bg-white pt-1 rounded-md shadow-md'>
             <div class="flex justify-center ml-4 mr-4">
@@ -102,9 +112,9 @@ const Home = ({ handleLogout, user }) => {
           </div>
           <div className='px-4 pb-4 mt-4 rounded-md shadow-xl container bg-white overflow-auto h-80'>
             <div className='flex justify-center'>
-            <button className='sm:hidden border border-gray-800 px-1 rounded-lg mt-2' onClick={clearLog}>clear log</button>
+              <button className='sm:hidden border border-gray-800 px-1 rounded-lg mt-2' onClick={clearLog}>clear log</button>
             </div>
-            
+
             {
               userInfo && userInfo.Ingredients.length > 0 ?
                 <div>
