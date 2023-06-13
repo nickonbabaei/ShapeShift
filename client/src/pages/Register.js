@@ -335,7 +335,7 @@ const Register = ({ setUser }) => {
 
                                     </div>
                                     <div class="col-start-2 col-end-6 justify-center sm:flex sm:items-center sm:gap-4">
-                                        <span class="mt-4 text-sm text-gray-500 sm:mt-0">
+                                        <span class="pb-6 text-sm text-gray-500 sm:mt-0">
                                             Already have an account?
                                             <NavLink to={'/'} className="text-gray-700 underline">Sign in</NavLink>
                                         </span>

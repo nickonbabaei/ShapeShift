@@ -18,16 +18,23 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                             <label class="sr-only" for="sex">Sex</label>
                             <select
                                 class="w-full rounded-lg border border-gray-200 p-3 text-sm"
-                                placeholder="Age"
+                                placeholder="sex"
                                 type="text"
                                 id="sex"
                                 onChange={handleGoalChange}
                                 value={editGoal.sex}
                                 required
                             >
+                             
                                 <option disabled selected>Sex</option>
-                                <option value='male'>Male</option>
+                                <option value='male' className=''>Male</option>
                                 <option value='female'>Female</option>
+
+                                
+                                
+
+                                
+                                
                             </select>
                         </div>
                         <div>
