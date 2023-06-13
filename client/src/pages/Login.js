@@ -33,17 +33,18 @@ const Login = ({ setUser, updateUser }) => {
 
         <div className="mx-auto h-screen bg-sky-200">
             <div className="px-4 pb-16 pt-4 sm:px-6 lg:px-8 mx-auto max-w-lg">
-                <img src={logo} className='pb-2'/>
+                <img src={logo} className='pb-2 md:mt-6'/>
+
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-white sm:mt-6 mb-0 space-y-4 rounded-lg shadow-2xl p-8 lg:p-8"
+                    className="bg-white md:mt-6 mb-0 space-y-4 rounded-lg shadow-2xl px-4 pb-8 pt-4"
                 >
                     <h1 className="text-center text-2xl font-bold text-sky-600 sm:text-3xl">
-                        Welcome To ShapeShift
+                        Hi, Welcome Back!
                     </h1>
 
                     <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
-                        Please log in to your account to continue tracking your daily caloric intake. Let's keep making progress towards your health goals!
+                        Sign in to continue tracking your daily caloric and macro intake. Let's keep making progress towards your goals!
                     </p>
                     <p className="text-center text-sky-600 text-lg font-medium">Sign in to your account</p>
 

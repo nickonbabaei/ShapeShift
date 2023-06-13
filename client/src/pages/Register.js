@@ -203,10 +203,10 @@ const Register = ({ setUser }) => {
                     </div>
                 </section >
                 :
-                <section class="bg-white">
+                <section class="bg-sky-200 lg:bg-white min-h-screen max-h-full">
                     <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
                         <aside
-                            class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
+                            class="hidden relative lg:block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
                         >
                             <img
                                 alt="Pattern"
@@ -217,18 +217,18 @@ const Register = ({ setUser }) => {
 
                         <main
                             aria-label="Main"
-                            class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
+                            class="flex items-center justify-center px-4 sm:px-8 py-16 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
                         >
-                            <div class="max-w-xl lg:max-w-3xl">
+                            <div class="max-w-xl px-4 pb-4 bg-white rounded-lg shadow-2xl lg:rounded-none lg:shadow-none lg:max-w-3xl">
 
                                 <h1
-                                    class="mt-6 text-2xl text-center text-sky-600 font-bold text-gray-900 sm:text-3xl md:text-4xl"
+                                    class="mt-4 text-2xl text-center text-sky-600 font-bold text-gray-900 sm:text-3xl md:text-4xl"
                                 >
                                     Join The ShapeShift Community
                                 </h1>
 
                                 <p class="mt-4 leading-relaxed text-gray-500">
-                                    To get started, please register by creating an account with us. Simply enter your email address and create a secure password. Once you're registered, you can start tracking your daily caloric intake and reach your health goals. Let's get started!
+                                    To get started, please register by creating an account with us. Once you're registered, you can start tracking your daily caloric and macro intake in order to reach your health goals. Let's get started!
                                 </p>
 
                                 <form onSubmit={handleSubmit} class="mt-8 grid grid-rows-5 grid-cols-6 gap-6">
@@ -324,17 +324,17 @@ const Register = ({ setUser }) => {
                                         </label>
                                     </div>
 
-                                    <div class="col-start-2 col-end-6 justify-center sm:flex sm:items-center sm:gap-4">
+                                    <div class="col-start-2 col-end-6 justify-center flex items-center sm:gap-4">
 
                                         <button
                                             onClick={handleSubmit}
-                                            class="inline-block shrink-0 rounded-md border border-sky-600 bg-sky-600 px-10 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
+                                            class="shrink-0 rounded-md border border-sky-600 bg-sky-600 px-10 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
                                         >
                                             Create an account
                                         </button>
 
                                     </div>
-                                    <div class="col-start-2 col-end-6 justify-center sm:flex sm:items-center sm:gap-4">
+                                    <div class="col-start-2 col-end-6 justify-center flex items-center sm:gap-4">
                                         <span class="pb-6 text-sm text-gray-500 sm:mt-0">
                                             Already have an account?
                                             <NavLink to={'/'} className="text-gray-700 underline">Sign in</NavLink>
