@@ -39,7 +39,7 @@ const Nav = ({ handleLogout, page }) => {
 
                     <div
                         id="dropdown"
-                        className={`flex flex-col absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 p-2 ${open ? "block" : "hidden"
+                        className={`flex flex-col absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 px-2 ${open ? "block" : "hidden"
                             }`}
                     >
                         <NavLink to='/' className='py-2'>Dashboard</NavLink>
