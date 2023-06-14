@@ -12,14 +12,14 @@ const Nav = ({ handleLogout, page }) => {
     }
 
     return (
-        <header aria-label="Site Header" className="bg-sky-200 sm:border-b-2 sm:border-white">
+        <header aria-label="Site Header" className="sm:border-b-2 sm:border-white">
             <div
-                className="sm:mx-auto flex h-14 max-w-screen-xl justify-between items-center pl-2 sm:gap-8 sm:pr-6 lg:pr-8"
+                className="sm:mx-auto flex h-14 max-w-screen-xl justify-between items-center pl-3 sm:gap-8 sm:pr-6 lg:pr-8"
             >
                 <div className="sm:hidden">
                     <button
                         onClick={handleDropDown}
-                        className="rounded bg-sky-200 p-2 text-gray-600 transition hover:text-gray-600"
+                        className="rounded bg-blur p-2 text-gray-600 transition hover:text-gray-600"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -47,11 +47,11 @@ const Nav = ({ handleLogout, page }) => {
                         <NavLink onClick={handleLogout} to="/" className='py-2'>Sign Out</NavLink>
                     </div>
                 </div>
-                <div className='sm:hidden pl-2'>
+                <div className='sm:hidden pl-10'>
                     <h2>{page}</h2>
                 </div>
                 <div className='sm:hidden'>
-                    <img src={Logo} className='w-5/6' />
+                    <img src={Logo} className='w-2/3 mx-auto' />
                 </div>
 
                 <NavLink className="hidden sm:block pl-6 text-sky-600 hover:text-white" to="/">
