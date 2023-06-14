@@ -3,7 +3,7 @@ import { RegisterUser, SignInUser } from '../services/Auth'
 import { useState } from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import axios from 'axios'
-import logo from '../images/loginLogo.png'
+import logo from '../images/logoo.png'
 
 const Register = ({ setUser }) => {
     let navigate = useNavigate()
@@ -204,133 +204,131 @@ const Register = ({ setUser }) => {
                     </div>
                 </section >
                 :
-                    <section class="pt-12 px-6 pb-16 mx-auto min-h-screen bg-cover" style={{ backgroundImage: 'url("data:image/jpeg;base64,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")' }}>
-                        {/* <img src={logo} className='lg:hidden py-2 max-w-lg mx-auto'/> */}
-                        <div class="mx-auto max-w-lg px-4 py-4 bg-white rounded-lg shadow-2xl sm:px-6">
-                            <h1
-                                class="text-2xl text-center text-sky-600 font-bold text-gray-900 sm:text-3xl md:text-4xl"
-                            >
-                                Join The ShapeShift Community
-                            </h1>
+                <section class="pt-4 px-6 pb-16 mx-auto min-h-screen bg-cover" style={{ backgroundImage: 'url("data:image/jpeg;base64,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")' }}>
+                    <img src={logo} className='w-28 sm:w-32 pb-8 mx-auto mt-6'/>
+                    <h1 class="text-2xl text-center text-sky-600 text-gray-900 sm:text-5xl text-3xl pb-6 sm:pt-8 sm:pb-16">
+                        Join <span class='text-white'>Shape</span>Shift
+                    </h1>
+                    <div class="mx-auto max-w-lg px-4 py-4 bg-white rounded-lg shadow-2xl sm:px-6">
 
-                            <p class="mt-4 leading-relaxed text-gray-500">
-                                To get started, please register by creating an account with us. Once you're registered, you can start tracking your daily caloric and macro intake in order to reach your health goals. Let's get started!
-                            </p>
-                            <p className="text-center text-sky-600 text-lg font-medium pt-4 sm:pt-0">Sign up for your account</p>
+                        <p class="leading-relaxed text-gray-500 text-center pb-4">
+                            Once registered, start tracking your daily caloric and macro intake in order to reach your health goals. Let's get started!
+                        </p>
+                        
 
-                            <form onSubmit={handleSubmit} class="mt-4 grid grid-rows-5 grid-cols-6 gap-6">
-                                <div class="col-span-6">
-                                    <label
-                                        for="email"
-                                        class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-sky-600 focus-within:ring-1 focus-within:ring-sky-600"
+                        <form onSubmit={handleSubmit} class="mt-4 grid grid-rows-5 grid-cols-6 gap-6">
+                            <div class="col-span-6">
+                                <label
+                                    for="email"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-sky-600 focus-within:ring-1 focus-within:ring-sky-600"
+                                >
+                                    <input
+                                        type="name"
+                                        name="username"
+                                        placeholder="Full name"
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.username}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
                                     >
-                                        <input
-                                            type="name"
-                                            name="username"
-                                            placeholder="Full name"
-                                            class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                            value={formValues.username}
-                                            onChange={handleChange}
-                                            required
-                                        />
-
-                                        <span
-                                            class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-                                        >
-                                            Full name
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div class="col-span-6">
-                                    <label
-                                        for="email"
-                                        class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
-                                    >
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Email"
-                                            class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                            value={formValues.email}
-                                            onChange={handleChange}
-                                            required
-                                        />
-
-                                        <span
-                                            class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-                                        >
-                                            Email
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <label
-                                        for="password"
-                                        class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
-                                    >
-                                        <input
-                                            type="password"
-                                            name="password"
-                                            placeholder="Password"
-                                            class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                            value={formValues.password}
-                                            onChange={handleChange}
-                                            required
-                                        />
-
-                                        <span
-                                            class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-                                        >
-                                            Password
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div class="col-span-6 sm:col-span-3">
-                                    <label
-                                        for="confirmPassword"
-                                        class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
-                                    >
-                                        <input
-                                            type="password"
-                                            name="confirmPassword"
-                                            placeholder='Confirm password'
-                                            class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                            value={formValues.confirmPassword}
-                                            onChange={handleChange}
-                                            required
-                                        />
-
-                                        <span
-                                            class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-                                        >
-                                            Confirm password
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div class="col-start-2 col-end-6 justify-center flex items-center sm:gap-4">
-
-                                    <button
-                                        onClick={handleSubmit}
-                                        class="shrink-0 rounded-md border border-sky-600 bg-sky-600 px-10 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
-                                    >
-                                        Create an account
-                                    </button>
-
-                                </div>
-                                <div class="col-start-2 col-end-6 justify-center flex items-center sm:gap-4">
-                                    <span class="pb-6 text-sm text-gray-500 sm:mt-0">
-                                        Already have an account?
-                                        <NavLink to={'/'} className="text-gray-700 underline">Sign in</NavLink>
+                                        Full name
                                     </span>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-               
+                                </label>
+                            </div>
+
+                            <div class="col-span-6">
+                                <label
+                                    for="email"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
+                                >
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Email
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
+                                <label
+                                    for="password"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
+                                >
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.password}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Password
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
+                                <label
+                                    for="confirmPassword"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-sky-600"
+                                >
+                                    <input
+                                        type="password"
+                                        name="confirmPassword"
+                                        placeholder='Confirm password'
+                                        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        value={formValues.confirmPassword}
+                                        onChange={handleChange}
+                                        required
+                                    />
+
+                                    <span
+                                        class="absolute left-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+                                    >
+                                        Confirm password
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="col-start-2 col-end-6 justify-center flex items-center sm:gap-4">
+
+                                <button
+                                    onClick={handleSubmit}
+                                    class="shrink-0 rounded-md border border-sky-600 bg-sky-600 px-10 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-sky-600"
+                                >
+                                    Create an account
+                                </button>
+
+                            </div>
+                            <div class="col-start-2 col-end-6 justify-center flex items-center sm:gap-4">
+                                <span class="pb-6 text-sm text-gray-500 sm:mt-0">
+                                    Already have an account?
+                                    <NavLink to={'/'} className="text-gray-700 underline">Sign in</NavLink>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
 
 
 
