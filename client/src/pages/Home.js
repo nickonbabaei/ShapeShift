@@ -14,7 +14,7 @@ const Home = ({ handleLogout, user }) => {
   // const [selectedFood, setSelectedFood] = useState([])
   // const [logged, setLogged] = useState(null)
   const [userInfo, setUserInfo] = useState(null)
-  const [page, setPage] = useState('Dashboard')
+  const [page, setPage] = useState('Home')
 
   const getUserInfo = async () => {
     const response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
@@ -45,10 +45,10 @@ const Home = ({ handleLogout, user }) => {
     <div className="mx-auto min-h-screen bg-cover" style={{backgroundImage: `url(${bg})`}}>
       <header>
         <Nav handleLogout={handleLogout} page={page} />
-        <div className='hidden sm:flex sm:justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div>
+        {/* <div className='hidden sm:flex sm:justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div> */}
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
-      <div class="mx-auto max-w-screen-xl px-4 sm:py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-screen-xl px-4 sm:pb-16 pb-6 pt-2 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
           <div className='flex flex-col items-center justify-center bg-white py-1 rounded-md shadow-md'>
             <p className='text-gray-400 text-sm'>Calories left</p>
