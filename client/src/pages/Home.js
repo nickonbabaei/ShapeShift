@@ -129,20 +129,20 @@ const Home = ({ handleLogout, user }) => {
                 </div>
             }
           </div>
-          <div className='flex justify-center sm:justify-between'>
+          <div className='flex justify-center md:justify-between'>
             <button
-              class="hidden sm:inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
+              class="hidden md:inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
               onClick={toggleOpen}
             >
               Add Food
             </button>
             <button
-              class="hidden sm:inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
+              class="hidden md:inline-block rounded-lg bg-sky-600 px-8 py-3 mt-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl"
               onClick={clearLog}
             >Clear Log
             </button>
             <button
-              class='sm:hidden mt-4'
+              class='md:hidden mt-4'
               onClick={toggleOpen}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
