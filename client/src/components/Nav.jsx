@@ -49,7 +49,7 @@ const Nav = ({ handleLogout, page }) => {
             </div>
 
             <div className='md:hidden pl-8'>
-                <h2>{page}</h2>
+                <h2 className='font-medium sm:text-xl text-lg'>{page}</h2>
             </div>
             <div className='md:hidden'>
                 <img src={Logo} className='w-2/3 mx-auto' />
@@ -64,6 +64,7 @@ const Nav = ({ handleLogout, page }) => {
                     Details
                 </NavLink>
             </div>
+            
 
             <NavLink
                 className="hidden md:block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition border hover:bg-transparent hover:border-sky-600 hover:text-sky-600"
@@ -72,7 +73,6 @@ const Nav = ({ handleLogout, page }) => {
             >
                 Sign Out
             </NavLink>
-
         </div>
        
     );
