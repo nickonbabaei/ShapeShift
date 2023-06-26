@@ -4,6 +4,7 @@ import { useState } from 'react'
 import SearchBar from './SearchBar'
 import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
+import loading from '../images/loadingIcon.gif'
 
 
 
@@ -13,6 +14,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     const [searched, setSearched] = useState(null)
     const [foodDetails, setFoodDetails] = useState(null)
     const [searchResults, setSearchResults] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const toggleDetails = () => {
         setRenderDetails(!renderDetails)
@@ -51,8 +53,10 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     const getSearchResults = async (e) => {
         e.preventDefault()
         setSearchResults(null)
+        setIsLoading(true)
         const name = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query="${searched}"&dataType=&pageSize=&api_key=${process.env.REACT_APP_USDA_KEY}`)
         setSearchResults(name.data.foods)
+        setIsLoading(false)
     }
 
     const getSpecificFood = (food) => {
@@ -127,6 +131,10 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <SearchBar handleChange={handleChanges} onSubmit={getSearchResults} />
                             </div>
                             <div className='container overflow-auto h-60'>
+                                {isLoading ? 
+                                    <img src={loading} className='mx-auto w-1/5 mt-20 sm:mt-16'/>
+                                
+                                    : null}
                                 {searchResults &&
                                     searchResults.map((result) => (
                                         result?.foodNutrients[3]?.value &&
