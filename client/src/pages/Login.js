@@ -94,8 +94,7 @@ const Login = ({ setUser }) => {
                     </button>
 
                     <p className="text-center text-sm text-gray-500">
-                        No account?
-                        <NavLink className="underline" to={'/register'}>Sign up</NavLink>
+                        No account? <NavLink className="underline font-bold hover:text-sky-600" to={'/register'}>Sign up</NavLink> or <NavLink className="underline font-bold hover:text-sky-600" to={'/register'}>continue as guest</NavLink>
                     </p>
                     
                 </form>
