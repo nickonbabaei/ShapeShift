@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react'
+import axios from 'axios';
 import { SignInUser } from '../services/Auth'
 import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../images/logoo.png'
 import bg from '../images/bg.jpeg'
-
+import randomEmail from 'random-email'
 
 const Login = ({ setUser }) => {
 
@@ -26,6 +27,15 @@ const Login = ({ setUser }) => {
         setUser(payload)
         navigate('/')
     }
+
+    const asGuest = async (e) => {
+        e.preventDefault()
+        const payload = await SignInUser({email: 'guest@gmail.com', password: 'guest'})
+        setUser(payload)
+        navigate('/')
+    }
+
+
 
     return (
         <div className="mx-auto min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
@@ -94,7 +104,7 @@ const Login = ({ setUser }) => {
                     </button>
 
                     <p className="text-center text-sm text-gray-500">
-                        No account? <NavLink className="underline font-bold hover:text-sky-600" to={'/register'}>Sign up</NavLink> or <NavLink className="underline font-bold hover:text-sky-600" to={'/register'}>continue as guest</NavLink>
+                        No account? <NavLink className="underline font-bold hover:text-sky-600" to={'/register'}>Sign up</NavLink> or <NavLink className="underline font-bold hover:text-sky-600" onClick={asGuest}>continue as guest</NavLink>
                     </p>
                     
                 </form>
