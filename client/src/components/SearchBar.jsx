@@ -2,7 +2,6 @@ import React from 'react'
 
 const SearchBar = ({ handleChange, onSubmit }) => {
 
-
     return (
         <div className='relative rounded-xl'>
             <form class='flex' onSubmit={onSubmit}>
@@ -12,7 +11,6 @@ const SearchBar = ({ handleChange, onSubmit }) => {
                     class="w-full rounded-tl-lg p-4 pr-12 text-sm shadow-sm"
                     placeholder="Search Food"
                     onChange={handleChange}
-
                 />
                 <button
                     type="submit"
@@ -20,9 +18,7 @@ const SearchBar = ({ handleChange, onSubmit }) => {
                 >
                     Search
                 </button>
-
             </form>
-
         </div>
     )
 }

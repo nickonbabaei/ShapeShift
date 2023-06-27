@@ -2,8 +2,7 @@ import React from 'react'
 import { Modal } from '@mui/material';
 
 const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalSubmit }) => {
-
-
+    
     return (
         <Modal
             open={open}

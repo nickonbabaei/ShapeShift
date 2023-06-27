@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const FoodCard = ({ result, getSpecificFood }) => {
+    
     return (
         <ol className='flex w-full'>
             <ul class="w-full bg-white shadow-md">

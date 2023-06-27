@@ -56,7 +56,7 @@ const Nav = ({ handleLogout, page }) => {
             </div>
 
             <div className='hidden md:flex'>
-                <NavLink className="pr-4 text-sky-600 hover:text-white" to="/">
+                <NavLink className="pr-8 text-sky-600 hover:text-white" to="/">
                     <h1>Home</h1>
                 </NavLink>
 

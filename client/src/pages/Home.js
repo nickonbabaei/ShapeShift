@@ -5,14 +5,11 @@ import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
 import HomeFoodCard from '../components/HomeFoodCard'
 import { NavLink } from 'react-router-dom'
-import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 import bg from '../images/bg.jpeg'
 
 const Home = ({ handleLogout, user }) => {
 
   let [open, setOpen] = useState(false)
-  // const [selectedFood, setSelectedFood] = useState([])
-  // const [logged, setLogged] = useState(null)
   const [userInfo, setUserInfo] = useState(null)
   const [page, setPage] = useState('Home')
 
@@ -41,16 +38,17 @@ const Home = ({ handleLogout, user }) => {
     await axios.delete(`http://localhost:3001/api/ingredient/delete/${food.id}`)
     getUserInfo()
   }
+
   return (
-    <div className="mx-auto min-h-screen bg-cover" style={{backgroundImage: `url(${bg})`}}>
+    <div className="mx-auto min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
       <header>
         <Nav handleLogout={handleLogout} page={page} />
-        {/* <div className='hidden sm:flex sm:justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div> */}
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 sm:pb-16 pb-6 pt-2 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
           <div className='flex flex-col items-center justify-center bg-white py-1 rounded-md shadow-md'>
+
             <p className='text-gray-400 text-sm'>Calories left</p>
             {userInfo && userInfo?.Ingredients.length > 0 ?
               <h1 className='text-black text-4xl font-semibold'>
@@ -61,47 +59,46 @@ const Home = ({ handleLogout, user }) => {
                 {userInfo?.Goal.calories} <span className='font-light'>cal</span>
               </h1>
             }
-
           </div>
           <div className='mt-4 sm:flex-row items-center justify-center sm:justify-between bg-white pt-1 rounded-md shadow-md'>
-            <div class="flex justify-center ml-4 mr-4">
+            <div class="flex justify-center mx-4">
               <h2 class="text-sm text-gray-400">Total nutrients</h2>
             </div>
             {
               userInfo && userInfo.Ingredients.length > 0 ?
-                <div class="flex justify-between pt-2 sm:mt-0 sm:px-8 rounded-b-md">
-                  <div class="flex flex-col items-center justify-center px-4 pb-1 bg-white rounded-b-md sm:mt-0">
+                <div class="flex flex-wrap justify-between pt-2 sm:mt-0 px-2 sm:px-8 rounded-b-md">
+                  <div class="flex flex-col items-center justify-center px-4 bg-white rounded-b-md pb-4 sm:mt-0">
                     <p class="text-lg">Cal</p>
                     <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)}</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center px-4 pb-1  bg-white sm:mt-0">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 bg-white sm:mt-0">
                     <p class="text-lg">Protein</p>
                     <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.protein)).reduce((acc, curr) => acc + curr, 0)}g</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center px-4 pb-1 bg-white sm:mt-0">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 bg-white sm:mt-0">
                     <p class="text-lg">Carb</p>
                     <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.carbs)).reduce((acc, curr) => acc + curr, 0)}g</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center px-4 pb-1 rounded-b-md bg-white sm:mt-0">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 rounded-b-md bg-white sm:mt-0">
                     <p class="text-lg">Fat</p>
                     <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.fat)).reduce((acc, curr) => acc + curr, 0)}g</p>
                   </div>
                 </div>
                 :
-                <div class="flex justify-between pt-2 sm:mt-0 sm:px-8 rounded-b-md">
-                  <div class="flex flex-col items-center justify-center px-4 pb-1 bg-white rounded-b-md sm:mt-0">
+                <div class="flex flex-wrap justify-between pt-2 sm:mt-0 sm:px-8 rounded-b-md">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 bg-white rounded-b-md sm:mt-0">
                     <p class="text-lg">Cal</p>
                     <p class="text-lg font-bold">0</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center px-4 pb-1  bg-white sm:mt-0">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 bg-white sm:mt-0">
                     <p class="text-lg">Protein</p>
                     <p class="text-lg font-bold">0g</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center px-4 pb-1 bg-white sm:mt-0">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 bg-white sm:mt-0">
                     <p class="text-lg">Carb</p>
                     <p class="text-lg font-bold">0g</p>
                   </div>
-                  <div class="flex flex-col items-center justify-center px-4 pb-1 rounded-b-md bg-white sm:mt-0">
+                  <div class="flex flex-col items-center justify-center px-4 pb-4 rounded-b-md bg-white sm:mt-0">
                     <p class="text-lg">Fat</p>
                     <p class="text-lg font-bold">0g</p>
                   </div>
@@ -149,56 +146,10 @@ const Home = ({ handleLogout, user }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
 
-
             </button>
           </div>
-
-          {/* {
-            userInfo && userInfo.Ingredients.length > 0 ?
-              <div className='mt-16 sm:flex-row items-center justify-center sm:justify-between bg-gray-100 pt-1 pr-4 pl-4 pb-4 rounded-md shadow-md'>
-                <div class="flex justify-center ml-4 mr-4">
-                  <h2 class="text-2xl font-bold">Total Nutrients Logged</h2>
-                </div>
-                <div class="flex justify-center sm:justify-center pt-4 sm:mt-0">
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
-                    <p class="text-lg font-semibold underline">Calories</p>
-                    <p id="calories" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)}</p>
-                  </div>
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
-                    <p class="text-lg font-semibold underline">Protein</p>
-                    <p id="protein" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.protein)).reduce((acc, curr) => acc + curr, 0)}g</p>
-                  </div>
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md mr-4 sm:mt-0">
-                    <p class="text-lg font-semibold underline">Carbs</p>
-                    <p id="carbs" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.carbs)).reduce((acc, curr) => acc + curr, 0)}g</p>
-                  </div>
-                  <div class="flex flex-col items-center justify-center p-4 bg-white rounded-md shadow-md sm:mt-0">
-                    <p class="text-lg font-semibold underline">Fat</p>
-                    <p id="fat" class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.fat)).reduce((acc, curr) => acc + curr, 0)}g</p>
-                  </div>
-                </div>
-
-              </div>
-              :
-              <div className='mt-16 sm:flex-row items-center justify-center sm:justify-between bg-gray-100 pt-1 pr-4 pl-4 pb-4 rounded-md shadow-md'>
-                <div class="flex justify-center ml-4 mr-4">
-                  <h2 class="text-2xl underline font-bold justify-center">Total Nutrients Logged</h2>
-                </div>
-                <div className='flex justify-center pt-10 pb-10'>
-                  <h1 className='font-bold'>No nutrients to display!</h1>
-
-                </div>
-
-              </div>
-          } */}
-
         </div>
-
-
       </div>
-
-
-
     </div>
   )
 }

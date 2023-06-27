@@ -6,8 +6,6 @@ import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
 import loading from '../images/loadingIcon.gif'
 
-
-
 const AddFoodModal = React.forwardRef((props, ref) => {
     const { open, toggleOpen, user, getUserInfo } = props
     const [renderDetails, setRenderDetails] = useState(false)
@@ -23,32 +21,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     const handleChanges = (event) => {
         setSearched(event.target.value)
     }
-
-    // const getSearchResults = async (e) => {
-    //     e.preventDefault()
-    //     setSearchResults(null)
-    //     const name = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${searched}`, {
-    //         headers: {
-    //             'x-app-id': 'bec583d3',
-    //             'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY
-    //         }
-    //     })
-
-    //     let nutrientsArray = []
-    //     for (let food of name.data.common) {
-    //         const nutrients = await axios.post(`https://trackapi.nutritionix.com/v2/natural/nutrients`, { "query": food.food_name }, {
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //                 'x-app-id': 'bec583d3',
-    //                 'x-app-key': process.env.REACT_APP_NUTRIONIX_KEY,
-    //                 'x-remote-user-id': '0'
-    //             }
-    //         })
-    //         nutrientsArray.push(nutrients.data.foods[0])
-    //     }
-    //     setSearchResults(nutrientsArray)
-    //     nutrientsArray = []
-    // }
 
     const getSearchResults = async (e) => {
         e.preventDefault()
@@ -66,7 +38,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     }
 
     const logFood = async () => {
-
         await axios.post('http://localhost:3001/api/ingredient/create', {
             'userId': user.id,
             'name': foodDetails.description,
@@ -151,10 +122,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                 </div>
             </div>
         </Modal>
-
-
     )
-
 })
 
 

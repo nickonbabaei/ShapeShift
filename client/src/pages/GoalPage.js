@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import EditGoalForm from '../components/EditGoalForm'
-import ShapeShiftLogo from '../images/ShapeShiftLogo.png'
 import bg from '../images/bg.jpeg'
 
 const GoalPage = ({ user, handleLogout }) => {
@@ -43,6 +42,7 @@ const GoalPage = ({ user, handleLogout }) => {
             <Nav handleLogout={handleLogout} page={page} />
             {/* <div className='flex justify-center'> <img src={ShapeShiftLogo} className="h-52 w-screen sm:rounded-b-lg sm:w-96 sm:h-48" /> </div> */}
             <div className='mx-auto px-4'>
+                
 
 
                 <div class="mx-auto max-w-lg text-center pb-6 pt-2">
