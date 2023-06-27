@@ -42,24 +42,36 @@ const Home = ({ handleLogout, user }) => {
   return (
     <div className="mx-auto min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
       <header>
-        <Nav handleLogout={handleLogout} page={page} />
+        <Nav handleLogout={handleLogout} page={page} user={user} />
       </header>
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 sm:pb-16 pb-6 pt-2 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
-          <div className='flex flex-col items-center justify-center bg-white py-1 rounded-md shadow-md'>
 
-            <p className='text-gray-400 text-sm'>Calories left</p>
-            {userInfo && userInfo?.Ingredients.length > 0 ?
-              <h1 className='text-black text-4xl font-semibold'>
-                {userInfo?.Goal.calories - userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)} <span className='font-light'>cal</span>
-              </h1>
-              :
-              <h1 className='text-black text-4xl font-semibold'>
-                {userInfo?.Goal.calories} <span className='font-light'>cal</span>
-              </h1>
-            }
-          </div>
+          {user?.email === 'guest@gmail.com' ?
+            <div className='pb-4 pt-2'>
+              <h1 className='text-center font-semibold text-2xl sm:text-3xl'>Welcome Guest!</h1>
+              <h3 className='text-sm sm:text-md text-center font-medium'>Create an account in order to access more features</h3>
+            </div>
+            :
+            <div>
+              <h1 className='text-center font-semibold text-2xl sm:text-3xl'>Welcome {userInfo?.username.split(' ')[0].charAt(0).toUpperCase() + userInfo?.username.slice(1).split(' ')[0]}</h1>
+              <h3 className='text-sm sm:text-md text-center font-medium pb-6'>Lets get tracking!</h3>
+              <div className='flex flex-col items-center justify-center bg-white py-1 rounded-md shadow-md'>
+                <p className='text-gray-400 text-sm'>Calories left</p>
+                {userInfo && userInfo?.Ingredients.length > 0 ?
+                  <h1 className='text-black text-4xl font-semibold'>
+                    {userInfo?.Goal.calories - userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)} <span className='font-light'>cal</span>
+                  </h1>
+                  :
+                  <h1 className='text-black text-4xl font-semibold'>
+                    {userInfo?.Goal.calories} <span className='font-light'>cal</span>
+                  </h1>
+                }
+              </div>
+            </div>
+          }
+
           <div className='mt-4 sm:flex-row items-center justify-center sm:justify-between bg-white pt-1 rounded-md shadow-md'>
             <div class="flex justify-center mx-4">
               <h2 class="text-sm text-gray-400">Total nutrients</h2>

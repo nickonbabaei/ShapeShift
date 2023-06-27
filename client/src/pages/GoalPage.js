@@ -42,7 +42,7 @@ const GoalPage = ({ user, handleLogout }) => {
             <Nav handleLogout={handleLogout} page={page} />
             <div className='mx-auto px-4'>
                 <div class="mx-auto max-w-lg text-center pb-6 pt-2">
-                    <h2 class="text-2xl font-bold sm:text-4xl"> {goalInfo.username.split(' ')[0].charAt(0).toUpperCase() + goalInfo.username.slice(1).split(' ')[0]}'s Details</h2>
+                    <h2 class="text-2xl font-semibold sm:text-3xl"> {goalInfo.username.split(' ')[0].charAt(0).toUpperCase() + goalInfo.username.slice(1).split(' ')[0]}'s Details</h2>
                 </div>
                 <div className='mx-auto max-w-screen-sm w-full flex flex-col bg-white px-4 shadow-lg rounded-md'>
                     <div className='flex justify-between border-b-2 py-2'>

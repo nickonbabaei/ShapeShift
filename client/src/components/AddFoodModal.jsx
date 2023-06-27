@@ -33,7 +33,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
 
     const getSpecificFood = (food) => {
         setFoodDetails(food)
-        console.log(foodDetails)
         toggleDetails()
     }
 

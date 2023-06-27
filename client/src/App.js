@@ -41,6 +41,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home user={user} handleLogout={handleLogOut}/>} />
             <Route path='/goalpage' element={<GoalPage user={user} handleLogout={handleLogOut}/>} />
+            <Route path='/register' element={<Register setUser={setUser}/>} />
           </Routes>
           :
           <Routes>
