@@ -5,7 +5,6 @@ import { SignInUser } from '../services/Auth'
 import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../images/logoo.png'
 import bg from '../images/bg.jpeg'
-import randomEmail from 'random-email'
 
 const Login = ({ setUser }) => {
 
@@ -30,7 +29,7 @@ const Login = ({ setUser }) => {
 
     const asGuest = async (e) => {
         e.preventDefault()
-        const payload = await SignInUser({email: 'guest@gmail.com', password: 'guest'})
+        const payload = await SignInUser({ email: 'guest@gmail.com', password: 'guest' })
         setUser(payload)
         navigate('/')
     }
@@ -40,7 +39,6 @@ const Login = ({ setUser }) => {
     return (
         <div className="mx-auto min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
             <div className="px-6 pb-16 pt-4 lg:px-8 mx-auto max-w-lg">
-
                 <img src={logo} className='w-28 sm:w-32 pb-8 mx-auto mt-6' />
                 <h1 className="text-center text-sky-600 text-3xl sm:text-5xl sm:pt-8 sm:pb-12">
                     Sign in to <span className='text-white'>Shape</span>Shift
@@ -106,7 +104,7 @@ const Login = ({ setUser }) => {
                     <p className="text-center text-sm text-gray-500">
                         No account? <NavLink className="underline font-bold hover:text-sky-600" to={'/register'}>Sign up</NavLink> or <NavLink className="underline font-bold hover:text-sky-600" onClick={asGuest}>continue as guest</NavLink>
                     </p>
-                    
+
                 </form>
             </div>
         </div>

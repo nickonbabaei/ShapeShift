@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const FoodCard = ({ result, getSpecificFood }) => {
-    
+
     return (
         <ol className='flex w-full'>
             <ul class="w-full bg-white shadow-md">
@@ -14,7 +14,7 @@ const FoodCard = ({ result, getSpecificFood }) => {
                                 result?.brandName ?
                                     <p>{Math.round(result?.foodNutrients[3]?.value)} cal, {result?.brandName}</p>
                                     :
-                                    <p>{Math.round(result?.foodNutrients[3]?.value)} cal, GENERIC </p>
+                                    <p>{Math.round(result?.foodNutrients[3]?.value)} cal</p>
                             }
                         </p>
                     </li>

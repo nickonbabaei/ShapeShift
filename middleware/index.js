@@ -30,7 +30,6 @@ try {
     }
     res.status(401).send({status: 'Error', msg: 'Unauthorized'})
 } catch(error) {
-    console.log(error)
     res.status(401).send({status: "Error", msg: 'Verify Token Error'})
 }
 }
@@ -44,7 +43,6 @@ const stripToken = (req, res, next) => {
     }
     res.status(401).send({status: 'Error', msg: 'Unauthorized'})
     } catch(error) {
-        console.log(error)
         res.status(401).send({status: 'Errorr', msg: 'Strip Token Error'})
     }
 }

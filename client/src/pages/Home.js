@@ -51,12 +51,12 @@ const Home = ({ handleLogout, user }) => {
           {user?.email === 'guest@gmail.com' ?
             <div className='pb-4 pt-2'>
               <h1 className='text-center font-semibold text-2xl sm:text-3xl'>Welcome Guest!</h1>
-              <h3 className='text-sm sm:text-md text-center font-medium'>Create an account in order to access more features</h3>
+              <h3 className='text-xs sm:text-sm text-center font-medium'>Create an account in order to access more features</h3>
             </div>
             :
             <div>
               <h1 className='text-center font-semibold text-2xl sm:text-3xl'>Welcome {userInfo?.username.split(' ')[0].charAt(0).toUpperCase() + userInfo?.username.slice(1).split(' ')[0]}</h1>
-              <h3 className='text-sm sm:text-md text-center font-medium pb-6'>Lets get tracking!</h3>
+              <h3 className='text-xs sm:text-sm text-center font-medium pb-6'>Lets get tracking!</h3>
               <div className='flex flex-col items-center justify-center bg-white py-1 rounded-md shadow-md'>
                 <p className='text-gray-400 text-sm'>Calories left</p>
                 {userInfo && userInfo?.Ingredients.length > 0 ?
@@ -78,7 +78,7 @@ const Home = ({ handleLogout, user }) => {
             </div>
             {
               userInfo && userInfo.Ingredients.length > 0 ?
-                <div class="flex flex-wrap justify-between pt-2 sm:mt-0 px-2 sm:px-8 rounded-b-md">
+                <div class="flex flex-wrap justify-between pt-2 sm:mt-0 px-4 sm:px-8 rounded-b-md">
                   <div class="flex flex-col items-center justify-center px-4 bg-white rounded-b-md pb-4 sm:mt-0">
                     <p class="text-lg">Cal</p>
                     <p class="text-lg font-bold">{userInfo.Ingredients.map((item) => Math.round(item.calories)).reduce((acc, curr) => acc + curr, 0)}</p>
@@ -120,7 +120,7 @@ const Home = ({ handleLogout, user }) => {
           </div>
           <div className='px-4 pb-4 mt-4 rounded-md shadow-xl container bg-white overflow-auto h-80'>
             <div className='flex justify-center'>
-              <button className='sm:hidden border border-gray-800 px-1 rounded-lg mt-2' onClick={clearLog}>clear log</button>
+              <button className='md:hidden border border-gray-800 px-1 rounded-lg mt-2' onClick={clearLog}>clear log</button>
             </div>
 
             {

@@ -85,10 +85,10 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                     <p id="fat" class="text-lg font-bold">{Math.round(foodDetails.foodNutrients[1].value * 10) / 10}g</p>
                                 </div>
                             </div>
-                            <div class="mt-4 items-center flex justify-center">
+                            {/* <div class="mt-4 items-center flex justify-center">
                                 <label for="servings" class="mr-2 font-semibold">Servings:</label>
                                 <input id="servings" type="number" min="1" max="10" value="1" class="p-2 border rounded-md shadow-md" />
-                            </div>
+                            </div> */}
                             <div onClick={logFood} className='flex justify-center pt-4'>
                                 <button className="block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-600 ">
                                     Add Food
