@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../images/logo.png'
-import header from '../images/header.png'
 
 const Nav = ({ handleLogout, page, user }) => {
     const [open, setOpen] = useState(false)
@@ -113,7 +112,7 @@ const Nav = ({ handleLogout, page, user }) => {
 
                     <div className='hidden md:flex items-center'>
                         <div>
-                        <img src={Logo} className='w-2/3 pr-2'/>
+                            <img src={Logo} className='w-2/3 pr-2' />
                         </div>
                         <NavLink className="pr-8 text-sky-600 hover:text-white pb-1" to="/">
                             <h1>Home</h1>
