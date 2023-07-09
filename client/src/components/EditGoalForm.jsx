@@ -1,8 +1,8 @@
 import React from 'react'
 import { Modal } from '@mui/material';
 
-const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalSubmit }) => {
-    
+const EditGoalForm = ({ toggleOpen, open, editGoal, handleGoalChange, handleGoalSubmit }) => {
+
     return (
         <Modal
             open={open}
@@ -24,16 +24,16 @@ const EditGoalForm = ({toggleOpen, open, editGoal, handleGoalChange, handleGoalS
                                 value={editGoal.sex}
                                 required
                             >
-                             
+
                                 <option disabled selected>Sex</option>
                                 <option value='male' className=''>Male</option>
                                 <option value='female'>Female</option>
 
-                                
-                                
 
-                                
-                                
+
+
+
+
                             </select>
                         </div>
                         <div>

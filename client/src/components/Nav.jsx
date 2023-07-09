@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../images/logo.png'
 import header from '../images/header.png'
 
-
 const Nav = ({ handleLogout, page, user }) => {
     const [open, setOpen] = useState(false)
 
@@ -13,7 +12,6 @@ const Nav = ({ handleLogout, page, user }) => {
     }
 
     return (
-
         <div>
             {user?.email === 'guest@gmail.com' ?
                 <div className="flex h-14 justify-between items-center px-4 md:gap-8 md:px-8">

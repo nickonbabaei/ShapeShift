@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
-import { useState } from 'react'
 import SearchBar from './SearchBar'
 import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
@@ -51,8 +50,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
         toggleOpen()
     }
 
-
-
     return (
         <Modal open={open} ref={ref}>
             <div class="mt-[45%] mr-[5%] ml-[5%] sm:mx-auto sm:mt-[10%] sm:mr-[20%] sm:ml-[20%] max-w-screen-xl">
@@ -85,10 +82,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                     <p id="fat" class="text-lg font-bold">{Math.round(foodDetails.foodNutrients[1].value * 10) / 10}g</p>
                                 </div>
                             </div>
-                            {/* <div class="mt-4 items-center flex justify-center">
-                                <label for="servings" class="mr-2 font-semibold">Servings:</label>
-                                <input id="servings" type="number" min="1" max="10" value="1" class="p-2 border rounded-md shadow-md" />
-                            </div> */}
                             <div onClick={logFood} className='flex justify-center pt-4'>
                                 <button className="block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-600 ">
                                     Add Food
@@ -101,9 +94,8 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                 <SearchBar handleChange={handleChanges} onSubmit={getSearchResults} />
                             </div>
                             <div className='container overflow-auto h-60'>
-                                {isLoading ? 
-                                    <img src={loading} className='mx-auto w-1/5 mt-20 sm:mt-16'/>
-                                
+                                {isLoading ?
+                                    <img src={loading} className='mx-auto w-1/5 mt-20 sm:mt-16' />
                                     : null}
                                 {searchResults &&
                                     searchResults.map((result) => (
@@ -111,7 +103,6 @@ const AddFoodModal = React.forwardRef((props, ref) => {
                                         <FoodCard result={result} getSpecificFood={getSpecificFood} />
                                     ))
                                 }
-
                             </div>
                             <div>
                                 <button onClick={toggleOpen} className='ml-2 hover:text-red-700'> close </button>
