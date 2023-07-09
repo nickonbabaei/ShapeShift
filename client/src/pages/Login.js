@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react'
-import axios from 'axios';
 import { SignInUser } from '../services/Auth'
 import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../images/logoo.png'
