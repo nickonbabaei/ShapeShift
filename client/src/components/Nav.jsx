@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../images/logo.png'
 
 const Nav = ({ handleLogout, page, user }) => {

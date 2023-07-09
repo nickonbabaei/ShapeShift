@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
 import HomeFoodCard from '../components/HomeFoodCard'
-import { NavLink } from 'react-router-dom'
 import bg from '../images/bg.jpeg'
 
 const Home = ({ handleLogout, user }) => {
