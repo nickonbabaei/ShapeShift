@@ -36,7 +36,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     }
 
     const logFood = async () => {
-        await axios.post('http://localhost:3001/api/ingredient/create', {
+        await axios.post('/api/ingredient/create', {
             'userId': user.id,
             'name': foodDetails.description,
             'calories': foodDetails.foodNutrients[3].value,

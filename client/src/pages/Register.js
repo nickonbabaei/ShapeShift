@@ -54,7 +54,7 @@ const Register = ({ setUser }) => {
 
     const handleGoalSubmit = async (e) => {
         e.preventDefault()
-        await axios.post(`http://localhost:3001/api/goal/create/${userInfo.id}`, goal)
+        await axios.post(`/api/goal/create/${userInfo.id}`, goal)
         let payload = await SignInUser({ email: formValues.email, password: formValues.password })
         setUser(payload)
         navigate('/')

@@ -19,7 +19,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
     const handleGoalSubmit = async (e) => {
         e.preventDefault()
-        await axios.put(`http://localhost:3001/api/goal/update/${goalInfo.Goal.id}`, editGoal)
+        await axios.put(`/api/goal/update/${goalInfo.Goal.id}`, editGoal)
         toggleOpen()
         getGoalInfo()
 
@@ -27,7 +27,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
 
     const getGoalInfo = async () => {
-        let response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
+        let response = await axios.get(`/api/user/get/${user?.id}`)
         setGoalInfo(response.data)
         setEditGoal(response.data.Goal)
     }

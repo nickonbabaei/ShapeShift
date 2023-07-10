@@ -13,7 +13,7 @@ const Home = ({ handleLogout, user }) => {
   const [page, setPage] = useState('Home')
 
   const getUserInfo = async () => {
-    const response = await axios.get(`http://localhost:3001/api/user/get/${user?.id}`)
+    const response = await axios.get(`/api/user/get/${user?.id}`)
     setUserInfo(response.data)
   }
 
@@ -27,14 +27,14 @@ const Home = ({ handleLogout, user }) => {
 
   const clearLog = async () => {
     for (let food of userInfo.Ingredients) {
-      await axios.delete(`http://localhost:3001/api/ingredient/delete/${food.id}`)
+      await axios.delete(`/api/ingredient/delete/${food.id}`)
     }
     getUserInfo()
 
   }
 
   const deleteLog = async (food) => {
-    await axios.delete(`http://localhost:3001/api/ingredient/delete/${food.id}`)
+    await axios.delete(`/api/ingredient/delete/${food.id}`)
     getUserInfo()
   }
 
