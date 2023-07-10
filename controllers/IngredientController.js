@@ -1,5 +1,4 @@
 const { Ingredient } = require('../models')
-const axios = require('axios')
 require('dotenv').config()
 
 const getAllIngredients = async (req, res) => {

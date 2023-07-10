@@ -4,6 +4,7 @@ import SearchBar from './SearchBar'
 import FoodCard from './FoodCard'
 import { Modal } from '@mui/material'
 import loading from '../images/loadingIcon.gif'
+import Client from '../services/api'
 
 const AddFoodModal = React.forwardRef((props, ref) => {
     const { open, toggleOpen, user, getUserInfo } = props
@@ -25,7 +26,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
         e.preventDefault()
         setSearchResults(null)
         setIsLoading(true)
-        const name = await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query="${searched}"&dataType=&pageSize=&api_key=${process.env.REACT_APP_USDA_KEY}`)
+        const name = await Client.get(`https://api.nal.usda.gov/fdc/v1/foods/search?query="${searched}"&dataType=&pageSize=&api_key=${process.env.REACT_APP_USDA_KEY}`)
         setSearchResults(name.data.foods)
         setIsLoading(false)
     }
@@ -36,7 +37,7 @@ const AddFoodModal = React.forwardRef((props, ref) => {
     }
 
     const logFood = async () => {
-        await axios.post('/api/ingredient/create', {
+        await Client.post('/api/ingredient/create', {
             'userId': user.id,
             'name': foodDetails.description,
             'calories': foodDetails.foodNutrients[3].value,

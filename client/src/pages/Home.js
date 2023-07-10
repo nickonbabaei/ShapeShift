@@ -5,6 +5,7 @@ import Nav from '../components/Nav'
 import AddFoodModal from '../components/AddFoodModal'
 import HomeFoodCard from '../components/HomeFoodCard'
 import bg from '../images/bg.jpeg'
+import Client from '../services/api'
 
 const Home = ({ handleLogout, user }) => {
 
@@ -13,7 +14,7 @@ const Home = ({ handleLogout, user }) => {
   const [page, setPage] = useState('Home')
 
   const getUserInfo = async () => {
-    const response = await axios.get(`/api/user/get/${user?.id}`)
+    const response = await Client.get(`/api/user/get/${user?.id}`)
     setUserInfo(response.data)
   }
 
@@ -27,14 +28,14 @@ const Home = ({ handleLogout, user }) => {
 
   const clearLog = async () => {
     for (let food of userInfo.Ingredients) {
-      await axios.delete(`/api/ingredient/delete/${food.id}`)
+      await Client.delete(`/api/ingredient/delete/${food.id}`)
     }
     getUserInfo()
 
   }
 
   const deleteLog = async (food) => {
-    await axios.delete(`/api/ingredient/delete/${food.id}`)
+    await Client.delete(`/api/ingredient/delete/${food.id}`)
     getUserInfo()
   }
 

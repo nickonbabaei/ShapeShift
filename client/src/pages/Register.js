@@ -5,6 +5,7 @@ import { useNavigate, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import logo from '../images/logoo.png'
 import bg from '../images/bg.jpeg'
+import Client from '../services/api'
 
 const Register = ({ setUser }) => {
     let navigate = useNavigate()
@@ -54,7 +55,7 @@ const Register = ({ setUser }) => {
 
     const handleGoalSubmit = async (e) => {
         e.preventDefault()
-        await axios.post(`/api/goal/create/${userInfo.id}`, goal)
+        await Client.post(`/api/goal/create/${userInfo.id}`, goal)
         let payload = await SignInUser({ email: formValues.email, password: formValues.password })
         setUser(payload)
         navigate('/')
