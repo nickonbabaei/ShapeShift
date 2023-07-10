@@ -28,12 +28,6 @@ const EditGoalForm = ({ toggleOpen, open, editGoal, handleGoalChange, handleGoal
                                 <option disabled selected>Sex</option>
                                 <option value='male' className=''>Male</option>
                                 <option value='female'>Female</option>
-
-
-
-
-
-
                             </select>
                         </div>
                         <div>
