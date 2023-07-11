@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import EditGoalForm from '../components/EditGoalForm'
 import bg from '../images/bg.jpeg'
+import Client from '../services/api'
 
 const GoalPage = ({ user, handleLogout }) => {
 
@@ -19,7 +20,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
     const handleGoalSubmit = async (e) => {
         e.preventDefault()
-        await axios.put(`/api/goal/update/${goalInfo.Goal.id}`, editGoal)
+        await Client.put(`/api/goal/update/${goalInfo.Goal.id}`, editGoal)
         toggleOpen()
         getGoalInfo()
 
@@ -27,7 +28,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
 
     const getGoalInfo = async () => {
-        let response = await axios.get(`/api/user/get/${user?.id}`)
+        let response = await Client.get(`/api/user/get/${user?.id}`)
         setGoalInfo(response.data)
         setEditGoal(response.data.Goal)
     }
