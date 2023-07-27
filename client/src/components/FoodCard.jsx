@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom'
 const FoodCard = ({ result, getSpecificFood }) => {
 
     return (
-        <ol className='flex w-full'>
-            <ul class="w-full bg-white shadow-md">
+        <div className='flex w-full'>
+            <div class="w-full bg-white shadow-md">
                 <NavLink onClick={() => getSpecificFood(result)}>
-                    <li class="px-4 py-2 border-b border-gray-300 hover:bg-gray-100">
+                    <div class="px-4 py-2 border-b border-gray-300 hover:bg-gray-100">
                         <h4 className="text-gray-800 font-lg font-bold">{result.description}</h4>
                         <p className="text-base text-gray-500">
                             {
@@ -17,10 +17,10 @@ const FoodCard = ({ result, getSpecificFood }) => {
                                     <p>{Math.round(result?.foodNutrients[3]?.value)} cal</p>
                             }
                         </p>
-                    </li>
+                    </div>
                 </NavLink>
-            </ul>
-        </ol>
+            </div>
+        </div>
     )
 }
 
