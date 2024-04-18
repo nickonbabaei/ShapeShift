@@ -51,23 +51,21 @@ const Nav = ({ handleLogout, page, user }) => {
                     </div>
 
                     <div className='hidden md:flex'>
-                        <div><NavLink
+                        <NavLink
                             className="hidden md:block rounded-md mr-6 bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition border hover:bg-transparent hover:border-sky-600 hover:text-sky-600"
                             onClick={handleLogout}
                             to="/"
                         >
                             Sign in
-                        </NavLink></div>
+                        </NavLink>
+                        <NavLink
+                            className="hidden md:block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition border hover:bg-transparent hover:border-sky-600 hover:text-sky-600"
+                            onClick={handleLogout}
+                            to="/register"
+                        >
+                            Register
+                        </NavLink>
 
-                        <div>
-                            <NavLink
-                                className="hidden md:block rounded-md bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition border hover:bg-transparent hover:border-sky-600 hover:text-sky-600"
-                                onClick={handleLogout}
-                                to="/register"
-                            >
-                                Register
-                            </NavLink>
-                        </div>
                     </div>
 
                 </div>

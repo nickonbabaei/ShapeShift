@@ -11,7 +11,6 @@ const Home = ({ handleLogout, user }) => {
 
   let [open, setOpen] = useState(false)
   const [userInfo, setUserInfo] = useState(null)
-  const [page, setPage] = useState('Home')
 
   const getUserInfo = async () => {
     const response = await Client.get(`/api/user/get/${user?.id}`)
@@ -41,9 +40,9 @@ const Home = ({ handleLogout, user }) => {
 
   return (
     <div className="mx-auto min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
-      <header>
-        <Nav handleLogout={handleLogout} page={page} user={user} />
-      </header>
+     
+        <Nav handleLogout={handleLogout} page='Home' user={user} />
+      
       {open && <AddFoodModal getUserInfo={getUserInfo} user={user} open={open} toggleOpen={toggleOpen} />}
       <div class="mx-auto max-w-screen-xl px-4 sm:pb-16 pb-6 pt-2 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
@@ -157,7 +156,6 @@ const Home = ({ handleLogout, user }) => {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-
             </button>
           </div>
         </div>

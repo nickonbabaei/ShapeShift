@@ -2,7 +2,7 @@ import Axios from 'axios'
 
 export const BASE_URL = 'https://shapeshift-backend-70a5ca6c969f.herokuapp.com'
 
-const Client = Axios.create({ baseURL: BASE_URL })
+const Client = Axios.create({ baseURL: BASE_URL }) 
 Client.interceptors.request.use((config) => {
     const token = localStorage.getItem('token')
     if (token) {

@@ -12,7 +12,6 @@ const GoalPage = ({ user, handleLogout }) => {
     const toggleOpen = () => setOpen(!open);
     const [goalInfo, setGoalInfo] = useState()
     const [editGoal, setEditGoal] = useState()
-    const [page, setPage] = useState('Details')
 
     const handleGoalChange = (e) => {
         setEditGoal({ ...editGoal, [e.target.id]: e.target.value })
@@ -40,7 +39,7 @@ const GoalPage = ({ user, handleLogout }) => {
 
     return goalInfo && (
         <div className="mx-auto min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
-            <Nav handleLogout={handleLogout} page={page} />
+            <Nav handleLogout={handleLogout} page='Details' />
             <div className='mx-auto px-4'>
                 <div class="mx-auto max-w-lg text-center pb-6 pt-2">
                     <h2 class="text-2xl font-semibold sm:text-3xl"> {goalInfo.username.split(' ')[0].charAt(0).toUpperCase() + goalInfo.username.slice(1).split(' ')[0]}'s Details</h2>

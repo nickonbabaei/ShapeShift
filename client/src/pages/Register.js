@@ -3,7 +3,7 @@ import { RegisterUser, SignInUser } from '../services/Auth'
 import { useState } from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import axios from 'axios'
-import logo from '../images/logoo.png'
+import logo from '../images/logo2.png'
 import bg from '../images/bg.jpeg'
 import Client from '../services/api'
 

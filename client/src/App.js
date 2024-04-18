@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Nav from './components/Nav'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register';
@@ -19,6 +18,7 @@ function App() {
     localStorage.clear()
     navigate('/')
   }
+
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
@@ -35,7 +35,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Nav handleLogout={handleLogOut}/> */}
       <main className=''>
         {user?.email ?
           <Routes>
@@ -46,9 +45,7 @@ function App() {
           :
           <Routes>
             <Route path='/' element={<Login setUser={setUser} />} />
-            <Route path='/home' element={<Home handleLogout={handleLogOut} />} />
             <Route path='/register' element={<Register setUser={setUser} />} />
-            <Route path='/goalpage' element={<GoalPage user={user} />} />
           </Routes>
         }
       </main>
